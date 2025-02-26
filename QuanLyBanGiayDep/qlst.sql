@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 14, 2024 at 01:46 PM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Máy chủ: 127.0.0.1:3307
+-- Thời gian đã tạo: Th2 26, 2025 lúc 08:30 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,26 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qlst`
+-- Cơ sở dữ liệu: `qlst`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chamcongngay`
+-- Cấu trúc bảng cho bảng `chamcongngay`
 --
 
-DROP TABLE IF EXISTS `chamcongngay`;
-CREATE TABLE IF NOT EXISTS `chamcongngay` (
-  `IdChamCong` int(11) NOT NULL AUTO_INCREMENT,
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `datetime` datetime DEFAULT NULL,
-  PRIMARY KEY (`IdChamCong`),
-  UNIQUE KEY `MaNv` (`MaNv`,`datetime`)
-) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `chamcongngay` (
+  `IdChamCong` int(11) NOT NULL,
+  `MaNv` varchar(50) NOT NULL,
+  `datetime` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `chamcongngay`
+-- Đang đổ dữ liệu cho bảng `chamcongngay`
 --
 
 INSERT INTO `chamcongngay` (`IdChamCong`, `MaNv`, `datetime`) VALUES
@@ -100,23 +96,26 @@ INSERT INTO `chamcongngay` (`IdChamCong`, `MaNv`, `datetime`) VALUES
 (93, 'NV008', '2024-05-05 00:00:00'),
 (94, 'NV009', '2024-05-05 00:00:00'),
 (95, 'NV009', '2024-05-06 00:00:00'),
-(96, 'NV008', '2024-05-06 00:00:00');
+(96, 'NV008', '2024-05-06 00:00:00'),
+(97, 'nv008', '2025-02-19 00:00:00'),
+(98, 'nv009', '2025-02-19 00:00:00'),
+(99, 'nv008', '2025-02-22 00:00:00'),
+(100, 'nv009', '2025-02-22 00:00:00'),
+(101, 'nv008', '2025-02-25 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chucvu`
+-- Cấu trúc bảng cho bảng `chucvu`
 --
 
-DROP TABLE IF EXISTS `chucvu`;
-CREATE TABLE IF NOT EXISTS `chucvu` (
+CREATE TABLE `chucvu` (
   `ChucVu` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hesoluong` double DEFAULT NULL,
-  PRIMARY KEY (`ChucVu`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `hesoluong` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `chucvu`
+-- Đang đổ dữ liệu cho bảng `chucvu`
 --
 
 INSERT INTO `chucvu` (`ChucVu`, `hesoluong`) VALUES
@@ -128,22 +127,18 @@ INSERT INTO `chucvu` (`ChucVu`, `hesoluong`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chuyenchuc`
+-- Cấu trúc bảng cho bảng `chuyenchuc`
 --
 
-DROP TABLE IF EXISTS `chuyenchuc`;
-CREATE TABLE IF NOT EXISTS `chuyenchuc` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chucVu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `datetime` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `MaNv` (`MaNv`),
-  KEY `chucVu` (`chucVu`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `chuyenchuc` (
+  `id` int(11) NOT NULL,
+  `MaNv` varchar(50) NOT NULL,
+  `chucVu` varchar(20) NOT NULL,
+  `datetime` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `chuyenchuc`
+-- Đang đổ dữ liệu cho bảng `chuyenchuc`
 --
 
 INSERT INTO `chuyenchuc` (`id`, `MaNv`, `chucVu`, `datetime`) VALUES
@@ -164,28 +159,27 @@ INSERT INTO `chuyenchuc` (`id`, `MaNv`, `chucVu`, `datetime`) VALUES
 (25, 'NV012', 'Nhân viên bán hàng', '2024-05-05 00:00:00'),
 (26, 'NV013', 'Nhân viên kho', '2024-05-05 00:00:00'),
 (27, 'NV014', 'Nhân viên bán hàng', '2024-05-05 00:00:00'),
-(28, 'NV016', 'Quản lý', '2024-05-06 00:00:00');
+(28, 'NV016', 'Quản lý', '2024-05-06 00:00:00'),
+(29, 'NV016', 'Nhân viên kho', '2025-02-22 00:00:00'),
+(30, 'NV017', 'Nhân viên bán hàng', '2025-02-22 00:00:00'),
+(31, 'NV018', 'Nhân viên kho', '2025-02-22 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ctpn`
+-- Cấu trúc bảng cho bảng `ctpn`
 --
 
-DROP TABLE IF EXISTS `ctpn`;
-CREATE TABLE IF NOT EXISTS `ctpn` (
-  `MaPn` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaSP` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `ctpn` (
+  `MaPn` varchar(50) NOT NULL,
+  `MaSP` varchar(50) NOT NULL,
   `DonGiaPn` double NOT NULL,
   `SoLuong` int(11) NOT NULL,
-  `ThanhTienCTPn` double NOT NULL,
-  PRIMARY KEY (`MaPn`,`MaSP`),
-  KEY `MaPn` (`MaPn`),
-  KEY `MaSach` (`MaSP`) USING BTREE
+  `ThanhTienCTPn` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ctpn`
+-- Đang đổ dữ liệu cho bảng `ctpn`
 --
 
 INSERT INTO `ctpn` (`MaPn`, `MaSP`, `DonGiaPn`, `SoLuong`, `ThanhTienCTPn`) VALUES
@@ -201,23 +195,19 @@ INSERT INTO `ctpn` (`MaPn`, `MaSP`, `DonGiaPn`, `SoLuong`, `ThanhTienCTPn`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ctpx`
+-- Cấu trúc bảng cho bảng `ctpx`
 --
 
-DROP TABLE IF EXISTS `ctpx`;
-CREATE TABLE IF NOT EXISTS `ctpx` (
-  `MaPx` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaSP` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `ctpx` (
+  `MaPx` varchar(50) NOT NULL,
+  `MaSP` varchar(50) NOT NULL,
   `DonGiaCTPX` double DEFAULT NULL,
   `SoLuong` int(10) NOT NULL,
-  `ThanhTienCTPX` double DEFAULT NULL,
-  PRIMARY KEY (`MaPx`,`MaSP`),
-  KEY `MaHd` (`MaPx`),
-  KEY `MaSach` (`MaSP`) USING BTREE
+  `ThanhTienCTPX` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ctpx`
+-- Đang đổ dữ liệu cho bảng `ctpx`
 --
 
 INSERT INTO `ctpx` (`MaPx`, `MaSP`, `DonGiaCTPX`, `SoLuong`, `ThanhTienCTPX`) VALUES
@@ -231,18 +221,16 @@ INSERT INTO `ctpx` (`MaPx`, `MaSP`, `DonGiaCTPX`, `SoLuong`, `ThanhTienCTPX`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loaisanpham`
+-- Cấu trúc bảng cho bảng `loaisanpham`
 --
 
-DROP TABLE IF EXISTS `loaisanpham`;
-CREATE TABLE IF NOT EXISTS `loaisanpham` (
-  `MaLoai` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenLoai` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MaLoai`)
+CREATE TABLE `loaisanpham` (
+  `MaLoai` varchar(50) NOT NULL,
+  `TenLoai` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `loaisanpham`
+-- Đang đổ dữ liệu cho bảng `loaisanpham`
 --
 
 INSERT INTO `loaisanpham` (`MaLoai`, `TenLoai`) VALUES
@@ -252,18 +240,16 @@ INSERT INTO `loaisanpham` (`MaLoai`, `TenLoai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Cấu trúc bảng cho bảng `login`
 --
 
-DROP TABLE IF EXISTS `login`;
-CREATE TABLE IF NOT EXISTS `login` (
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Password` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MaNv`)
+CREATE TABLE `login` (
+  `MaNv` varchar(50) NOT NULL,
+  `Password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `login`
+-- Đang đổ dữ liệu cho bảng `login`
 --
 
 INSERT INTO `login` (`MaNv`, `Password`) VALUES
@@ -277,94 +263,92 @@ INSERT INTO `login` (`MaNv`, `Password`) VALUES
 ('NV013', '111'),
 ('NV014', '111'),
 ('NV015', '111'),
-('NV016', '111');
+('NV016', '111'),
+('NV017', '111'),
+('NV018', '111');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `luongthang`
+-- Cấu trúc bảng cho bảng `luongthang`
 --
 
-DROP TABLE IF EXISTS `luongthang`;
-CREATE TABLE IF NOT EXISTS `luongthang` (
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `luongthang` (
+  `MaNv` varchar(50) NOT NULL,
   `tongluong` decimal(10,0) DEFAULT NULL,
-  `chucVu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `datetime` date NOT NULL,
-  PRIMARY KEY (`MaNv`,`datetime`),
-  KEY `chucVu` (`chucVu`)
+  `chucVu` varchar(20) NOT NULL,
+  `datetime` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `luongthang`
+-- Đang đổ dữ liệu cho bảng `luongthang`
 --
 
 INSERT INTO `luongthang` (`MaNv`, `tongluong`, `chucVu`, `datetime`) VALUES
-('NV008', '0', 'Nhân viên bán hàng', '2023-02-01'),
-('NV008', '0', 'Nhân viên bán hàng', '2023-03-01'),
-('NV008', '0', 'Nhân viên bán hàng', '2023-04-01'),
-('NV008', '0', 'Nhân viên bán hàng', '2024-02-11'),
-('NV008', '22200000', 'Nhân viên bán hàng', '2024-04-17'),
-('NV008', '3000000', 'Nhân viên bán hàng', '2024-05-06'),
-('NV009', '0', 'Nhân viên kho', '2023-02-01'),
-('NV009', '0', 'Nhân viên kho', '2023-03-01'),
-('NV009', '0', 'Nhân viên kho', '2023-04-01'),
-('NV009', '0', 'Nhân viên kho', '2024-02-11'),
-('NV009', '2700000', 'Nhân viên kho', '2024-04-17'),
-('NV009', '6750000', 'Nhân viên kho', '2024-05-06'),
-('NV011', '0', 'Nhân viên kho', '2023-02-01'),
-('NV011', '0', 'Nhân viên kho', '2023-03-01'),
-('NV011', '0', 'Nhân viên kho', '2023-04-01'),
-('NV011', '0', 'Nhân viên kho', '2024-02-11'),
-('NV011', '0', 'Nhân viên kho', '2024-04-20'),
-('NV011', '0', 'Nhân viên kho', '2024-05-06'),
-('NV012', '0', 'Nhân viên bán hàng', '2023-02-01'),
-('NV012', '0', 'Nhân viên bán hàng', '2023-03-01'),
-('NV012', '0', 'Nhân viên bán hàng', '2023-04-01'),
-('NV012', '0', 'Nhân viên bán hàng', '2024-02-11'),
-('NV012', '0', 'Nhân viên bán hàng', '2024-04-20'),
-('NV012', '0', 'Nhân viên bán hàng', '2024-05-06'),
-('NV013', '0', 'Nhân viên kho', '2023-02-01'),
-('NV013', '0', 'Nhân viên kho', '2023-03-01'),
-('NV013', '8100000', 'Nhân viên kho', '2023-04-01'),
-('NV013', '0', 'Nhân viên kho', '2024-02-11'),
-('NV013', '0', 'Nhân viên kho', '2024-04-20'),
-('NV013', '0', 'Nhân viên kho', '2024-05-06'),
-('NV014', '0', 'Nhân viên bán hàng', '2023-02-01'),
-('NV014', '3600000', 'Nhân viên bán hàng', '2023-03-01'),
-('NV014', '0', 'Nhân viên bán hàng', '2023-04-01'),
-('NV014', '0', 'Nhân viên bán hàng', '2024-02-11'),
-('NV014', '0', 'Nhân viên bán hàng', '2024-04-20'),
-('NV014', '0', 'Nhân viên bán hàng', '2024-05-06'),
-('NV015', '9450000', 'Nhân viên kho', '2023-02-01'),
-('NV015', '0', 'Nhân viên kho', '2023-03-01'),
-('NV015', '0', 'Nhân viên kho', '2023-04-01'),
-('NV015', '8100000', 'Nhân viên kho', '2024-02-11'),
-('NV015', '0', 'Nhân viên kho', '2024-04-20'),
-('NV015', '0', 'Nhân viên kho', '2024-05-06');
+('NV008', 0, 'Nhân viên bán hàng', '2023-02-01'),
+('NV008', 0, 'Nhân viên bán hàng', '2023-03-01'),
+('NV008', 0, 'Nhân viên bán hàng', '2023-04-01'),
+('NV008', 0, 'Nhân viên bán hàng', '2024-02-11'),
+('NV008', 22200000, 'Nhân viên bán hàng', '2024-04-17'),
+('NV008', 3000000, 'Nhân viên bán hàng', '2024-05-06'),
+('NV009', 0, 'Nhân viên kho', '2023-02-01'),
+('NV009', 0, 'Nhân viên kho', '2023-03-01'),
+('NV009', 0, 'Nhân viên kho', '2023-04-01'),
+('NV009', 0, 'Nhân viên kho', '2024-02-11'),
+('NV009', 2700000, 'Nhân viên kho', '2024-04-17'),
+('NV009', 6750000, 'Nhân viên kho', '2024-05-06'),
+('NV011', 0, 'Nhân viên kho', '2023-02-01'),
+('NV011', 0, 'Nhân viên kho', '2023-03-01'),
+('NV011', 0, 'Nhân viên kho', '2023-04-01'),
+('NV011', 0, 'Nhân viên kho', '2024-02-11'),
+('NV011', 0, 'Nhân viên kho', '2024-04-20'),
+('NV011', 0, 'Nhân viên kho', '2024-05-06'),
+('NV012', 0, 'Nhân viên bán hàng', '2023-02-01'),
+('NV012', 0, 'Nhân viên bán hàng', '2023-03-01'),
+('NV012', 0, 'Nhân viên bán hàng', '2023-04-01'),
+('NV012', 0, 'Nhân viên bán hàng', '2024-02-11'),
+('NV012', 0, 'Nhân viên bán hàng', '2024-04-20'),
+('NV012', 0, 'Nhân viên bán hàng', '2024-05-06'),
+('NV013', 0, 'Nhân viên kho', '2023-02-01'),
+('NV013', 0, 'Nhân viên kho', '2023-03-01'),
+('NV013', 8100000, 'Nhân viên kho', '2023-04-01'),
+('NV013', 0, 'Nhân viên kho', '2024-02-11'),
+('NV013', 0, 'Nhân viên kho', '2024-04-20'),
+('NV013', 0, 'Nhân viên kho', '2024-05-06'),
+('NV014', 0, 'Nhân viên bán hàng', '2023-02-01'),
+('NV014', 3600000, 'Nhân viên bán hàng', '2023-03-01'),
+('NV014', 0, 'Nhân viên bán hàng', '2023-04-01'),
+('NV014', 0, 'Nhân viên bán hàng', '2024-02-11'),
+('NV014', 0, 'Nhân viên bán hàng', '2024-04-20'),
+('NV014', 0, 'Nhân viên bán hàng', '2024-05-06'),
+('NV015', 9450000, 'Nhân viên kho', '2023-02-01'),
+('NV015', 0, 'Nhân viên kho', '2023-03-01'),
+('NV015', 0, 'Nhân viên kho', '2023-04-01'),
+('NV015', 8100000, 'Nhân viên kho', '2024-02-11'),
+('NV015', 0, 'Nhân viên kho', '2024-04-20'),
+('NV015', 0, 'Nhân viên kho', '2024-05-06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ncc`
+-- Cấu trúc bảng cho bảng `ncc`
 --
 
-DROP TABLE IF EXISTS `ncc`;
-CREATE TABLE IF NOT EXISTS `ncc` (
-  `MaNCC` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenNCC` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Sdt` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `DcNCC` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MaNCC`)
+CREATE TABLE `ncc` (
+  `MaNCC` varchar(50) NOT NULL,
+  `TenNCC` varchar(100) NOT NULL,
+  `Sdt` varchar(11) NOT NULL,
+  `DcNCC` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ncc`
+-- Đang đổ dữ liệu cho bảng `ncc`
 --
 
 INSERT INTO `ncc` (`MaNCC`, `TenNCC`, `Sdt`, `DcNCC`) VALUES
 ('NCC1', 'Công ty TNHH Puma 2', '12345678', '123 Đường A, Quận B, TP Hồ Chí Minh'),
 ('NCC10', 'Vans, Inc', '01234567', '147 Đường BB, Quận CC, TP Hải Phòng'),
+('NCC11', 'NCC Test', '098', 'HCM'),
 ('NCC2', 'Công ty Adidas Việt Nam', '23456789', '456 Đường D, Quận E, TP Hà Nội'),
 ('NCC3', 'Nike Việt Nam', '34567890', '789 Đường G, Quận H, TP Đà Nẵng'),
 ('NCC4', 'Reebok International Ltd', '45678901', '321 Đường J, Quận K, TP Cần Thơ'),
@@ -377,23 +361,20 @@ INSERT INTO `ncc` (`MaNCC`, `TenNCC`, `Sdt`, `DcNCC`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nhanvien`
+-- Cấu trúc bảng cho bảng `nhanvien`
 --
 
-DROP TABLE IF EXISTS `nhanvien`;
-CREATE TABLE IF NOT EXISTS `nhanvien` (
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `HoNv` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `DiaChiNv` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ChucVu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TrangThai` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`MaNv`),
-  KEY `ChucVu` (`ChucVu`)
+CREATE TABLE `nhanvien` (
+  `MaNv` varchar(50) NOT NULL,
+  `HoNv` varchar(10) NOT NULL,
+  `TenNv` varchar(50) NOT NULL,
+  `DiaChiNv` varchar(100) NOT NULL,
+  `ChucVu` varchar(20) NOT NULL,
+  `TrangThai` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `nhanvien`
+-- Đang đổ dữ liệu cho bảng `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`MaNv`, `HoNv`, `TenNv`, `DiaChiNv`, `ChucVu`, `TrangThai`) VALUES
@@ -407,30 +388,31 @@ INSERT INTO `nhanvien` (`MaNv`, `HoNv`, `TenNv`, `DiaChiNv`, `ChucVu`, `TrangTha
 ('NV013', 'Trịnh', 'Trần Phương Tuấn', 'Nam Định', 'Nhân viên kho', 1),
 ('NV014', 'Vũ', 'Đinh Trọng Thắng', 'su van hanh', 'Nhân viên bán hàng', 1),
 ('NV015', 'Trương', 'Mỹ Lan', 'that next place', 'Nhân viên kho', 1),
-('NV016', 'ree', 'Test', 'aaa', 'Quản lý', 0);
+('NV016', 'Nguyễn', 'Xuân Duy', 'HCM', 'Nhân viên kho', 0),
+('NV017', 'Hoàng', 'Dung', 'HCM', 'Nhân viên bán hàng', 1),
+('NV018', 'BB', 'AA', 'HN', 'Nhân viên kho', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nhasx`
+-- Cấu trúc bảng cho bảng `nhasx`
 --
 
-DROP TABLE IF EXISTS `nhasx`;
-CREATE TABLE IF NOT EXISTS `nhasx` (
-  `MaNSX` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenNSX` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Sdt` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `DcNSX` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MaNSX`)
+CREATE TABLE `nhasx` (
+  `MaNSX` varchar(50) NOT NULL,
+  `TenNSX` varchar(50) NOT NULL,
+  `Sdt` varchar(11) NOT NULL,
+  `DcNSX` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `nhasx`
+-- Đang đổ dữ liệu cho bảng `nhasx`
 --
 
 INSERT INTO `nhasx` (`MaNSX`, `TenNSX`, `Sdt`, `DcNSX`) VALUES
 ('NSX1', 'Puma', '12345678', '123 Đường A, Quận B, TP Hồ Chí Minh'),
 ('NSX10', 'Vans', '01234567', '147 Đường BB, Quận CC, TP Hải Phòng'),
+('NSX11', 'Duy', '0123', 'HCM'),
 ('NSX2', 'Adidas', '23456789', '456 Đường D, Quận E, TP Hà Nội'),
 ('NSX3', 'Nike', '34567890', '789 Đường G, Quận H, TP Đà Nẵng'),
 ('NSX4', 'Reebok', '45678901', '321 Đường J, Quận K, TP Cần Thơ'),
@@ -443,27 +425,23 @@ INSERT INTO `nhasx` (`MaNSX`, `TenNSX`, `Sdt`, `DcNSX`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phieunhap`
+-- Cấu trúc bảng cho bảng `phieunhap`
 --
 
-DROP TABLE IF EXISTS `phieunhap`;
-CREATE TABLE IF NOT EXISTS `phieunhap` (
-  `MaPn` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `phieunhap` (
+  `MaPn` varchar(50) NOT NULL,
+  `MaNv` varchar(50) NOT NULL,
   `NgayNhap` date NOT NULL,
   `ThanhTienPn` double NOT NULL,
-  `MaNCC` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`MaPn`),
-  KEY `pn1` (`MaNv`),
-  KEY `pn2` (`MaNCC`)
+  `MaNCC` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `phieunhap`
+-- Đang đổ dữ liệu cho bảng `phieunhap`
 --
 
 INSERT INTO `phieunhap` (`MaPn`, `MaNv`, `NgayNhap`, `ThanhTienPn`, `MaNCC`) VALUES
-('PN001', 'NV009', '2024-04-22', 65000000, 'NCC1'),
+('PN001', 'NV009', '2024-04-22', 65000000, 'NCC10'),
 ('PN002', 'NV009', '2023-04-22', 10000000, 'NCC3'),
 ('PN003', 'NV009', '2023-06-20', 12500000, 'NCC5'),
 ('PN004', 'NV009', '2024-02-21', 5000000, 'NCC7'),
@@ -472,21 +450,18 @@ INSERT INTO `phieunhap` (`MaPn`, `MaNv`, `NgayNhap`, `ThanhTienPn`, `MaNCC`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phieuxuat`
+-- Cấu trúc bảng cho bảng `phieuxuat`
 --
 
-DROP TABLE IF EXISTS `phieuxuat`;
-CREATE TABLE IF NOT EXISTS `phieuxuat` (
-  `MaPx` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaNv` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `phieuxuat` (
+  `MaPx` varchar(50) NOT NULL,
+  `MaNv` varchar(50) NOT NULL,
   `NgayXuat` date NOT NULL,
-  `TongTien` double NOT NULL,
-  PRIMARY KEY (`MaPx`),
-  KEY `hd1` (`MaNv`)
+  `TongTien` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `phieuxuat`
+-- Đang đổ dữ liệu cho bảng `phieuxuat`
 --
 
 INSERT INTO `phieuxuat` (`MaPx`, `MaNv`, `NgayXuat`, `TongTien`) VALUES
@@ -500,25 +475,21 @@ INSERT INTO `phieuxuat` (`MaPx`, `MaNv`, `NgayXuat`, `TongTien`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
-DROP TABLE IF EXISTS `sanpham`;
-CREATE TABLE IF NOT EXISTS `sanpham` (
-  `MaSP` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaNSX` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `MaLoai` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenSP` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+CREATE TABLE `sanpham` (
+  `MaSP` varchar(50) NOT NULL,
+  `MaNSX` varchar(50) NOT NULL,
+  `MaLoai` varchar(50) NOT NULL,
+  `TenSP` varchar(100) NOT NULL,
   `DonGia` double NOT NULL,
   `SoLuong` int(11) NOT NULL,
-  `TrangThai` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`MaSP`),
-  KEY `s1` (`MaNSX`),
-  KEY `s3` (`MaLoai`)
+  `TrangThai` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
 INSERT INTO `sanpham` (`MaSP`, `MaNSX`, `MaLoai`, `TenSP`, `DonGia`, `SoLuong`, `TrangThai`) VALUES
@@ -530,57 +501,175 @@ INSERT INTO `sanpham` (`MaSP`, `MaNSX`, `MaLoai`, `TenSP`, `DonGia`, `SoLuong`, 
 ('SANPHAM006', 'NSX6', 'LOAI13', 'test', 200000, 9, 1);
 
 --
--- Constraints for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Constraints for table `ctpn`
+-- Chỉ mục cho bảng `chamcongngay`
+--
+ALTER TABLE `chamcongngay`
+  ADD PRIMARY KEY (`IdChamCong`),
+  ADD UNIQUE KEY `MaNv` (`MaNv`,`datetime`);
+
+--
+-- Chỉ mục cho bảng `chucvu`
+--
+ALTER TABLE `chucvu`
+  ADD PRIMARY KEY (`ChucVu`);
+
+--
+-- Chỉ mục cho bảng `chuyenchuc`
+--
+ALTER TABLE `chuyenchuc`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `MaNv` (`MaNv`),
+  ADD KEY `chucVu` (`chucVu`);
+
+--
+-- Chỉ mục cho bảng `ctpn`
+--
+ALTER TABLE `ctpn`
+  ADD PRIMARY KEY (`MaPn`,`MaSP`),
+  ADD KEY `MaPn` (`MaPn`),
+  ADD KEY `MaSach` (`MaSP`) USING BTREE;
+
+--
+-- Chỉ mục cho bảng `ctpx`
+--
+ALTER TABLE `ctpx`
+  ADD PRIMARY KEY (`MaPx`,`MaSP`),
+  ADD KEY `MaHd` (`MaPx`),
+  ADD KEY `MaSach` (`MaSP`) USING BTREE;
+
+--
+-- Chỉ mục cho bảng `loaisanpham`
+--
+ALTER TABLE `loaisanpham`
+  ADD PRIMARY KEY (`MaLoai`);
+
+--
+-- Chỉ mục cho bảng `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`MaNv`);
+
+--
+-- Chỉ mục cho bảng `luongthang`
+--
+ALTER TABLE `luongthang`
+  ADD PRIMARY KEY (`MaNv`,`datetime`),
+  ADD KEY `chucVu` (`chucVu`);
+
+--
+-- Chỉ mục cho bảng `ncc`
+--
+ALTER TABLE `ncc`
+  ADD PRIMARY KEY (`MaNCC`);
+
+--
+-- Chỉ mục cho bảng `nhanvien`
+--
+ALTER TABLE `nhanvien`
+  ADD PRIMARY KEY (`MaNv`),
+  ADD KEY `ChucVu` (`ChucVu`);
+
+--
+-- Chỉ mục cho bảng `nhasx`
+--
+ALTER TABLE `nhasx`
+  ADD PRIMARY KEY (`MaNSX`);
+
+--
+-- Chỉ mục cho bảng `phieunhap`
+--
+ALTER TABLE `phieunhap`
+  ADD PRIMARY KEY (`MaPn`),
+  ADD KEY `pn1` (`MaNv`),
+  ADD KEY `pn2` (`MaNCC`);
+
+--
+-- Chỉ mục cho bảng `phieuxuat`
+--
+ALTER TABLE `phieuxuat`
+  ADD PRIMARY KEY (`MaPx`),
+  ADD KEY `hd1` (`MaNv`);
+
+--
+-- Chỉ mục cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`MaSP`),
+  ADD KEY `s1` (`MaNSX`),
+  ADD KEY `s3` (`MaLoai`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `chamcongngay`
+--
+ALTER TABLE `chamcongngay`
+  MODIFY `IdChamCong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
+--
+-- AUTO_INCREMENT cho bảng `chuyenchuc`
+--
+ALTER TABLE `chuyenchuc`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `ctpn`
 --
 ALTER TABLE `ctpn`
   ADD CONSTRAINT `ctpn1` FOREIGN KEY (`MaPn`) REFERENCES `phieunhap` (`MaPn`),
   ADD CONSTRAINT `ctpn2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Constraints for table `ctpx`
+-- Các ràng buộc cho bảng `ctpx`
 --
 ALTER TABLE `ctpx`
   ADD CONSTRAINT `cthd1` FOREIGN KEY (`MaPx`) REFERENCES `phieuxuat` (`MaPx`),
   ADD CONSTRAINT `cthd2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Constraints for table `login`
+-- Các ràng buộc cho bảng `login`
 --
 ALTER TABLE `login`
   ADD CONSTRAINT `fk_login` FOREIGN KEY (`MaNv`) REFERENCES `nhanvien` (`MaNv`);
 
 --
--- Constraints for table `luongthang`
+-- Các ràng buộc cho bảng `luongthang`
 --
 ALTER TABLE `luongthang`
   ADD CONSTRAINT `luongthang_ibfk_1` FOREIGN KEY (`MaNv`) REFERENCES `nhanvien` (`MaNv`),
   ADD CONSTRAINT `luongthang_ibfk_2` FOREIGN KEY (`chucVu`) REFERENCES `chucvu` (`ChucVu`);
 
 --
--- Constraints for table `nhanvien`
+-- Các ràng buộc cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`ChucVu`) REFERENCES `chucvu` (`ChucVu`);
 
 --
--- Constraints for table `phieunhap`
+-- Các ràng buộc cho bảng `phieunhap`
 --
 ALTER TABLE `phieunhap`
   ADD CONSTRAINT `pn1` FOREIGN KEY (`MaNv`) REFERENCES `nhanvien` (`MaNv`),
   ADD CONSTRAINT `pn2` FOREIGN KEY (`MaNCC`) REFERENCES `ncc` (`MaNCC`);
 
 --
--- Constraints for table `phieuxuat`
+-- Các ràng buộc cho bảng `phieuxuat`
 --
 ALTER TABLE `phieuxuat`
   ADD CONSTRAINT `hd1` FOREIGN KEY (`MaNv`) REFERENCES `nhanvien` (`MaNv`);
 
 --
--- Constraints for table `sanpham`
+-- Các ràng buộc cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `s1` FOREIGN KEY (`MaNSX`) REFERENCES `nhasx` (`MaNSX`),
