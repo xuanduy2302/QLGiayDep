@@ -201,7 +201,9 @@ public class NhanVienBUS {
             }
         
         List<ChuyenChucDTO> chucVuTrongThang = getChucVuTrongThang(MaNv, chamCongTrongThang, chucTruocDo);
-        
+        System.out.println("Tính lương tháng: " + month + " năm: " + year);
+        System.out.println("Dữ liệu chấm công: " + chamCongTrongThang);
+
        // inChucVuThayDoi(chucVuTrongThang, MaNv);
         
         return tinhToanTongLuong(chucVuTrongThang);        
@@ -221,8 +223,10 @@ public class NhanVienBUS {
     public void insertOrUpdateLuongThang(String maNv, double tongLuong, String chucVu, String datetime) {
         NhanVienDAO data = new NhanVienDAO();
         if (data.recordExists(maNv, datetime)) {
+        	System.out.println("Ngày lương: " + datetime);
             data.updateRecord(maNv, tongLuong, chucVu, datetime);
         } else {
+        	System.out.println("Ngày lương: " + datetime);
             data.insertRecord(maNv, tongLuong, chucVu, datetime);
         }
     }

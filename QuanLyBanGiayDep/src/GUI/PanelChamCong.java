@@ -88,7 +88,7 @@ public class PanelChamCong extends javax.swing.JPanel {
             }
         });
 
-        jComboBox_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        jComboBox_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
         javax.swing.GroupLayout pn_doLayout = new javax.swing.GroupLayout(pn_do);
         pn_do.setLayout(pn_doLayout);

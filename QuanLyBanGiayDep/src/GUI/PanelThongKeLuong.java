@@ -91,7 +91,7 @@ public class PanelThongKeLuong extends javax.swing.JPanel {
             }
         });
 
-        jComboBox_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        jComboBox_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
         panel_tkl.setBackground(new java.awt.Color(255, 0, 204));
 

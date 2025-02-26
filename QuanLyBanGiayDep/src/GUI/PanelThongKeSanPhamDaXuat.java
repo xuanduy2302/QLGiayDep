@@ -163,7 +163,7 @@ public class PanelThongKeSanPhamDaXuat extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Tháng");
 
-        jComboBox_year1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        jComboBox_year1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
         btn_export_quarter.setBackground(new java.awt.Color(255, 204, 102));
         btn_export_quarter.setText("Thống kê theo quý");
@@ -179,7 +179,7 @@ public class PanelThongKeSanPhamDaXuat extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Năm");
 
-        jComboBox_year2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        jComboBox_year2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
         jComboBox_month2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 

@@ -154,7 +154,7 @@ public class PanelThongKeSanPham extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Tháng");
 
-        jComboBox_year1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
+        jComboBox_year1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
         javax.swing.GroupLayout pn_doLayout = new javax.swing.GroupLayout(pn_do);
         pn_do.setLayout(pn_doLayout);
