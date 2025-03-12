@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3307
--- Thời gian đã tạo: Th2 26, 2025 lúc 08:30 AM
+-- Thời gian đã tạo: Th3 12, 2025 lúc 04:14 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -101,7 +101,9 @@ INSERT INTO `chamcongngay` (`IdChamCong`, `MaNv`, `datetime`) VALUES
 (98, 'nv009', '2025-02-19 00:00:00'),
 (99, 'nv008', '2025-02-22 00:00:00'),
 (100, 'nv009', '2025-02-22 00:00:00'),
-(101, 'nv008', '2025-02-25 00:00:00');
+(101, 'nv008', '2025-02-25 00:00:00'),
+(102, 'nv008', '2025-03-12 00:00:00'),
+(103, 'nv009', '2025-03-12 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -217,6 +219,31 @@ INSERT INTO `ctpx` (`MaPx`, `MaSP`, `DonGiaCTPX`, `SoLuong`, `ThanhTienCTPX`) VA
 ('PX004', 'SANPHAM005', 5000000, 10, 50000000),
 ('PX005', 'SANPHAM005', 5000000, 5, 25000000),
 ('PX006', 'SANPHAM001', 2000000, 110, 220000000);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `donxinnghi`
+--
+
+CREATE TABLE `donxinnghi` (
+  `maDon` varchar(50) NOT NULL,
+  `maNV` varchar(50) NOT NULL,
+  `lyDo` text DEFAULT NULL,
+  `ngayNghi` date DEFAULT NULL,
+  `ngayNopDon` date DEFAULT NULL,
+  `ngayDuyet` date DEFAULT NULL,
+  `trangThai` enum('ChuaXuLy','DaDuyet','TuChoi') NOT NULL DEFAULT 'ChuaXuLy'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `donxinnghi`
+--
+
+INSERT INTO `donxinnghi` (`maDon`, `maNV`, `lyDo`, `ngayNghi`, `ngayNopDon`, `ngayDuyet`, `trangThai`) VALUES
+('DXN001', 'nv009', 'bệnh', '2025-03-15', '2025-03-12', NULL, 'ChuaXuLy'),
+('DXN002', 'nv008', 'thích', '2025-03-18', '2025-03-12', '2025-03-12', 'DaDuyet'),
+('DXN003', 'nv008', 'thích', '2025-03-19', '2025-03-12', NULL, 'ChuaXuLy');
 
 -- --------------------------------------------------------
 
@@ -542,6 +569,12 @@ ALTER TABLE `ctpx`
   ADD KEY `MaSach` (`MaSP`) USING BTREE;
 
 --
+-- Chỉ mục cho bảng `donxinnghi`
+--
+ALTER TABLE `donxinnghi`
+  ADD PRIMARY KEY (`maDon`);
+
+--
 -- Chỉ mục cho bảng `loaisanpham`
 --
 ALTER TABLE `loaisanpham`
@@ -610,7 +643,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT cho bảng `chamcongngay`
 --
 ALTER TABLE `chamcongngay`
-  MODIFY `IdChamCong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `IdChamCong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT cho bảng `chuyenchuc`
