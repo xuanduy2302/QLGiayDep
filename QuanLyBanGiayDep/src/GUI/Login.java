@@ -10,7 +10,8 @@ import BUS.NhanVienBUS;
 public class Login extends javax.swing.JFrame {
     LoginBUS buslg = new LoginBUS();
     NhanVienBUS busnv = new NhanVienBUS();
-    
+    public static String maNV; // Lưu mã nhân viên đăng nhập
+
     public static String username;
     public static int check;
     public Login() {
@@ -24,7 +25,9 @@ public class Login extends javax.swing.JFrame {
                 System.out.println("mưa : "+ check);
                 
                 username = txt_TaiKhoan.getText();
-
+                // Lấy mã nhân viên từ username
+                maNV = txt_TaiKhoan.getText().trim();
+                
                 System.out.println("tên đăng nhập: " + username);
                 
                 if (check !=4  && check != 3){

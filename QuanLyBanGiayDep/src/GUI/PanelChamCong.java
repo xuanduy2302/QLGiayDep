@@ -4,6 +4,7 @@ package GUI;
 import java.awt.Color;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -11,6 +12,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import BUS.DonXinNghiBUS;
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
 
@@ -187,19 +189,37 @@ public class PanelChamCong extends javax.swing.JPanel {
         
         YearMonth yearMonth = YearMonth.of(year, month);
         
+        // Lấy danh sách các ngày chấm công từ NhanVienBUS
         NhanVienBUS bus = new NhanVienBUS();
         List<LocalDate> attendanceDates = bus.getAttendanceDates(username, year, month);
-
+        
+        // Lấy danh sách các ngày nghỉ đã duyệt từ DonXinNghiBUS
+        DonXinNghiBUS donBUS = new DonXinNghiBUS();
+        ArrayList<String> approvedLeaveDates = donBUS.getApprovedLeaveDates(Login.maNV);
+        
+        // Tạo panel chứa các checkbox cho mỗi ngày
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
         for (int day = 1; day <= yearMonth.lengthOfMonth(); day++) {
             LocalDate date = yearMonth.atDay(day);
             JCheckBox checkBox = new JCheckBox(date.toString());
+            
+            // Nếu ngày này nằm trong danh sách chấm công, đánh dấu và đặt màu chữ xanh lá
             if (attendanceDates.contains(date)) {
                 checkBox.setSelected(true);
-                checkBox.setForeground(Color.YELLOW);
+                checkBox.setForeground(Color.GREEN);
             }
-            checkBox.setEnabled(false);
+            
+            // Nếu ngày này nằm trong danh sách ngày nghỉ đã duyệt, override với chữ màu đỏ
+            if (approvedLeaveDates.contains(date.toString())) {
+                checkBox.setSelected(true);
+                checkBox.setForeground(Color.RED);
+                checkBox.setToolTipText("Ngày nghỉ đã duyệt");
+                checkBox.setEnabled(false);
+            } else {
+                checkBox.setEnabled(false);
+            }
+            
             panel.add(checkBox);
         }
         
@@ -210,6 +230,8 @@ public class PanelChamCong extends javax.swing.JPanel {
         panel_chamCong.repaint();
         panel_chamCong.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

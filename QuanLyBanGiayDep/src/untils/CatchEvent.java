@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import GUI.Danhmuc;
+import GUI.Login;
 import GUI.PanelLoaiSanPham;
 import GUI.PanelNhaCungCap;
 import GUI.PanelNhaSanXuat;
@@ -22,6 +23,8 @@ import GUI.PanelTaiKhoanCaNhan;
 import GUI.PanelThongKeLuong;
 import GUI.PanelThongKeSanPham;
 import GUI.PanelThongKeSanPhamDaXuat;
+import GUI.PanelDonXinNghi;
+import static GUI.Login.maNV;
 //import GUI.PanelThongKe;
 import GUI.PanelTrangChu;
 
@@ -88,6 +91,9 @@ public class CatchEvent {
                 case "thongkesanphamdaxuat":
                     pnNode = new PanelThongKeSanPhamDaXuat();
                     break;
+                case "donxinnghi":
+                	pnNode = new PanelDonXinNghi(Login.maNV);
+                	break;
                 default:
                     break;
         }

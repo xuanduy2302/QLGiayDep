@@ -270,5 +270,9 @@ public class NhanVienBUS {
         NhanVienDAO data = new NhanVienDAO();
         return data.soSanhLuongNam();
     }
+    public String getMaNVByUsername(String maNV) {
+    	return maNV;
+    }
+
 
 }

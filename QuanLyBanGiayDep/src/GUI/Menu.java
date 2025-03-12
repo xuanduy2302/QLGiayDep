@@ -55,6 +55,7 @@ public class Menu extends javax.swing.JFrame {
                 menu.add(new Danhmuc("taikhoancanhan", pn_tkcn, lb_tkcn));
                 menu.add(new Danhmuc("bill", pn_hd, lb_hd));
                 menu.add(new Danhmuc("thongkesanphamdaxuat", pn_tkspx, lb_tkspx));
+                menu.add(new Danhmuc("donxinnghi", pn_dxn, lb_dxn));
                 pn_tkl.setVisible(false);
                 pn_tksp.setVisible(false);
                 pn_qlnv_admin.setVisible(false);
@@ -86,6 +87,7 @@ public class Menu extends javax.swing.JFrame {
             case NHAN_VIEN_KHO:
                 menu.add(new Danhmuc("trangchu", pn_trangchu, lb_trangchu));
                 menu.add(new Danhmuc("taikhoancanhan", pn_tkcn, lb_tkcn));
+                menu.add(new Danhmuc("donxinnghi", pn_dxn, lb_dxn));
                 menu.add(new Danhmuc("book", pn_product, lb_product));
                 menu.add(new Danhmuc("nsx", pn_nsx, lb_nsx));
                 menu.add(new Danhmuc("ncc", pn_ncc, lb_ncc));
@@ -117,6 +119,10 @@ public class Menu extends javax.swing.JFrame {
         lb_tieude = new javax.swing.JLabel();
         pn_product = new javax.swing.JPanel();
         lb_product = new javax.swing.JLabel();
+        
+        pn_dxn = new javax.swing.JPanel();
+        lb_dxn = new javax.swing.JLabel();
+
         pn_nv = new javax.swing.JPanel();
         lb_nv = new javax.swing.JLabel();
         pn_pn = new javax.swing.JPanel();
@@ -221,6 +227,40 @@ public class Menu extends javax.swing.JFrame {
             pn_productLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lb_product, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
+        
+        //Don Xin nghi
+        pn_dxn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_dxn.setPreferredSize(new java.awt.Dimension(246, 60));
+
+        lb_dxn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        lb_dxn.setForeground(new java.awt.Color(255, 255, 255));
+        lb_dxn.setText("Đơn xin nghỉ");
+        lb_dxn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                // Sự kiện khi nhấn vào label, bạn có thể để xử lý tại đây hoặc để CatchEvent xử lý
+                pn_view.removeAll();
+                pn_view.setLayout(new java.awt.BorderLayout());
+                // Giả sử Login.maNV chứa mã nhân viên hiện hành
+                pn_view.add(new PanelDonXinNghi(Login.maNV));
+                pn_view.validate();
+                pn_view.repaint();
+            }
+        });
+
+        javax.swing.GroupLayout pn_dxnLayout = new javax.swing.GroupLayout(pn_dxn);
+        pn_dxn.setLayout(pn_dxnLayout);
+        pn_dxnLayout.setHorizontalGroup(
+            pn_dxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_dxnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addGap(83, 83, 83))
+        );
+        pn_dxnLayout.setVerticalGroup(
+            pn_dxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lb_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+//Don xin nghi
 
         pn_nv.setBackground(new java.awt.Color(148, 124, 176));
         pn_nv.setPreferredSize(new java.awt.Dimension(246, 60));
@@ -483,6 +523,7 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(pn_hd, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
             .addComponent(pn_nv, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
             .addComponent(pn_product, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+            .addComponent(pn_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE) //Thêm đơn xin nghỉ
             .addComponent(pn_ncc, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
             .addComponent(pn_loaisanpham, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
             .addComponent(pn_nsx, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
@@ -500,6 +541,8 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(pn_trangchu, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pn_product, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pn_dxn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)  // Thêm vào đây
                 .addGap(18, 18, 18)
                 .addComponent(pn_pn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -786,6 +829,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel lb_tkl;
     private javax.swing.JLabel lb_tksp;
     private javax.swing.JLabel lb_tkspx;
+    private javax.swing.JLabel lb_dxn;
     private javax.swing.JLabel lb_trangchu;
     private javax.swing.JLabel lbl_chao;
     private javax.swing.JPanel pn_all;
@@ -807,6 +851,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel pn_tkspx;
     private javax.swing.JPanel pn_trangchu;
     private javax.swing.JPanel pn_view;
+    private javax.swing.JPanel pn_dxn;
     private javax.swing.JButton btn_logout;
     // End of variables declaration//GEN-END:variables
     

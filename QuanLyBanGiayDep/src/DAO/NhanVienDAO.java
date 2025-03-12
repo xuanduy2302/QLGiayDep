@@ -442,6 +442,25 @@ public class NhanVienDAO {
             return null;
         }
     }
-    
+    public String getMaNVByUsername(String maNV) {
+        String maNV1 = "";
+        try {
+            String qry = "SELECT maNV FROM nhanvien WHERE maNV = '" + maNV1 + "'";
+            ResultSet rs = my.executeQuery(qry);
+            if (rs.next()) {
+                maNV1 = rs.getString("maNV");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                my.close();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return maNV1;
+    }
+
     
 }
