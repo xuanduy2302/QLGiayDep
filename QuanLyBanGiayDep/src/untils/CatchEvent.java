@@ -24,6 +24,8 @@ import GUI.PanelThongKeLuong;
 import GUI.PanelThongKeSanPham;
 import GUI.PanelThongKeSanPhamDaXuat;
 import GUI.PanelDonXinNghi;
+import GUI.PanelDuyetDonXinNghi;
+
 import static GUI.Login.maNV;
 //import GUI.PanelThongKe;
 import GUI.PanelTrangChu;
@@ -94,6 +96,10 @@ public class CatchEvent {
                 case "donxinnghi":
                 	pnNode = new PanelDonXinNghi(Login.maNV);
                 	break;
+                case "duyetdonxinnghi":
+                    pnNode = new PanelDuyetDonXinNghi();
+                    break;
+
                 default:
                     break;
         }

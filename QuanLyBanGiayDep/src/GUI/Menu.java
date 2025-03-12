@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
         pn_view.add(new PanelTrangChu());
         pn_view.validate();
         pn_view.repaint();
+        this.setResizable(false);
     }
     public ArrayList<Danhmuc> initMenu(int n){
         ArrayList<Danhmuc> menu = new ArrayList<>();
@@ -38,6 +39,7 @@ public class Menu extends javax.swing.JFrame {
                 menu.add(new Danhmuc("taikhoancanhan", pn_tkcn, lb_tkcn));
                 menu.add(new Danhmuc("employees", pn_nv, lb_nv));
                 menu.add(new Danhmuc("thongkeluong", pn_tkl, lb_tkl));
+                menu.add(new Danhmuc("duyetdonxinnghi", pn_ddxn, lb_ddxn));
                 pn_tksp.setVisible(false);
                 pn_tkspx.setVisible(false);
                 btn_chamCong.setVisible(false);
@@ -49,6 +51,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_nsx.setVisible(false);
                 pn_loaisanpham.setVisible(false);
                 pn_ncc.setVisible(false);
+                pn_dxn.setVisible(false);
                 break;
             case NHAN_VIEN_BAN_HANG:
                 menu.add(new Danhmuc("trangchu", pn_trangchu, lb_trangchu));
@@ -65,6 +68,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_nsx.setVisible(false);
                 pn_loaisanpham.setVisible(false);
                 pn_ncc.setVisible(false);
+                pn_ddxn.setVisible(false);
                 break;
             case ADMIN:
                 menu.add(new Danhmuc("trangchu", pn_trangchu, lb_trangchu));
@@ -83,6 +87,8 @@ public class Menu extends javax.swing.JFrame {
                 pn_hd.setVisible(false);
                 pn_nsx.setVisible(false);
                 pn_tksp.setVisible(false);
+                pn_dxn.setVisible(false);
+                pn_ddxn.setVisible(false);
                 break;
             case NHAN_VIEN_KHO:
                 menu.add(new Danhmuc("trangchu", pn_trangchu, lb_trangchu));
@@ -99,6 +105,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_tkl.setVisible(false);
                 pn_nv.setVisible(false);
                 pn_hd.setVisible(false);
+                pn_ddxn.setVisible(false);
                 break;
             default:
                 break;
@@ -122,6 +129,8 @@ public class Menu extends javax.swing.JFrame {
         
         pn_dxn = new javax.swing.JPanel();
         lb_dxn = new javax.swing.JLabel();
+        pn_ddxn = new javax.swing.JPanel();
+        lb_ddxn = new javax.swing.JLabel();
 
         pn_nv = new javax.swing.JPanel();
         lb_nv = new javax.swing.JLabel();
@@ -260,7 +269,40 @@ public class Menu extends javax.swing.JFrame {
             pn_dxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lb_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
-//Don xin nghi
+
+     // Duyệt Đơn Xin Nghỉ
+        pn_ddxn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_ddxn.setPreferredSize(new java.awt.Dimension(246, 60));
+
+        lb_ddxn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        lb_ddxn.setForeground(new java.awt.Color(255, 255, 255));
+        lb_ddxn.setText("Duyệt Đơn Xin Nghỉ");
+        lb_ddxn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                // Khi nhấn, load PanelDuyetDonXinNghi (giống phần DonXinNghi)
+                pn_view.removeAll();
+                pn_view.setLayout(new BorderLayout());
+                pn_view.add(new PanelDuyetDonXinNghi(), BorderLayout.CENTER);
+                pn_view.validate();
+                pn_view.repaint();
+            }
+        });
+
+        javax.swing.GroupLayout pn_ddxnLayout = new javax.swing.GroupLayout(pn_ddxn);
+        pn_ddxn.setLayout(pn_ddxnLayout);
+        pn_ddxnLayout.setHorizontalGroup(
+            pn_ddxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pn_ddxnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_ddxn, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addGap(83, 83, 83))
+        );
+        pn_ddxnLayout.setVerticalGroup(
+            pn_ddxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lb_ddxn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+
 
         pn_nv.setBackground(new java.awt.Color(148, 124, 176));
         pn_nv.setPreferredSize(new java.awt.Dimension(246, 60));
@@ -544,6 +586,8 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pn_dxn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)  // Thêm vào đây
                 .addGap(18, 18, 18)
+                .addComponent(pn_ddxn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)  // Thêm vào đây
+                .addGap(18, 18, 18)
                 .addComponent(pn_pn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pn_hd, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -721,7 +765,7 @@ public class Menu extends javax.swing.JFrame {
 
         getAccessibleContext().setAccessibleName("");
 
-        pack();
+       pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void lb_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_exitMouseClicked
@@ -830,6 +874,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel lb_tksp;
     private javax.swing.JLabel lb_tkspx;
     private javax.swing.JLabel lb_dxn;
+    private javax.swing.JLabel lb_ddxn;
     private javax.swing.JLabel lb_trangchu;
     private javax.swing.JLabel lbl_chao;
     private javax.swing.JPanel pn_all;
@@ -852,6 +897,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel pn_trangchu;
     private javax.swing.JPanel pn_view;
     private javax.swing.JPanel pn_dxn;
+    private javax.swing.JPanel pn_ddxn;
     private javax.swing.JButton btn_logout;
     // End of variables declaration//GEN-END:variables
     
