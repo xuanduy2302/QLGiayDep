@@ -21,6 +21,7 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
     NhaCungCapBUS bus = new NhaCungCapBUS();
     NhaCungCapDTO ncc = new NhaCungCapDTO();
     public PanelNhaCungCap() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         initData();
         initEvent();

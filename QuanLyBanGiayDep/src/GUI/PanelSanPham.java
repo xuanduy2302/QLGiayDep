@@ -30,6 +30,7 @@ public class PanelSanPham extends javax.swing.JPanel {
     NhaSanXuatBUS nsxBus = new NhaSanXuatBUS();
 
     public PanelSanPham() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         initData();
         load();

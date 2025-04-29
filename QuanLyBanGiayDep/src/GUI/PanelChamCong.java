@@ -15,6 +15,7 @@ import javax.swing.JScrollPane;
 import BUS.DonXinNghiBUS;
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
+import java.awt.Font;
 
 public class PanelChamCong extends javax.swing.JPanel {
     
@@ -46,9 +47,9 @@ public class PanelChamCong extends javax.swing.JPanel {
 
         panelforall.setBackground(new java.awt.Color(238, 241, 245));
 
-        tittle2.setBackground(new java.awt.Color(255, 255, 0));
+        tittle2.setBackground(new Color(0, 128, 192));
 
-        lblTitleTC2.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        lblTitleTC2.setFont(new Font("Tahoma", Font.BOLD, 28)); // NOI18N
         lblTitleTC2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitleTC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         lblTitleTC2.setText("Chấm Công");
@@ -189,41 +190,68 @@ public class PanelChamCong extends javax.swing.JPanel {
         
         YearMonth yearMonth = YearMonth.of(year, month);
         
-        // Lấy danh sách các ngày chấm công từ NhanVienBUS
-        NhanVienBUS bus = new NhanVienBUS();
-        List<LocalDate> attendanceDates = bus.getAttendanceDates(username, year, month);
+        // Lấy danh sách ngày chấm công (ngày đi làm) của nhân viên trong tháng
+        NhanVienBUS nvBus = new NhanVienBUS();
+        List<LocalDate> attendanceDates = nvBus.getAttendanceDates(username, year, month);
         
-        // Lấy danh sách các ngày nghỉ đã duyệt từ DonXinNghiBUS
+        // Lấy danh sách các ngày nghỉ đã duyệt của nhân viên (dạng chuỗi "yyyy-MM-dd")
         DonXinNghiBUS donBUS = new DonXinNghiBUS();
-        ArrayList<String> approvedLeaveDates = donBUS.getApprovedLeaveDates(Login.maNV);
+        ArrayList<String> approvedDatesStr = donBUS.getApprovedLeaveDates(Login.maNV);
         
-        // Tạo panel chứa các checkbox cho mỗi ngày
+        // Chuyển đổi các chuỗi sang LocalDate và lọc theo năm hiện tại
+        ArrayList<LocalDate> approvedLeaveDates = new ArrayList<>();
+        for(String d : approvedDatesStr) {
+            try {
+                LocalDate ld = LocalDate.parse(d);
+                if(ld.getYear() == year) {
+                    approvedLeaveDates.add(ld);
+                }
+            } catch(Exception ex) {
+                // bỏ qua nếu có lỗi định dạng
+            }
+        }
+        // Sắp xếp theo thứ tự tăng dần (ngày sớm nhất đứng đầu)
+        approvedLeaveDates.sort(null);
+        
+        // Lấy danh sách 12 ngày nghỉ đầu tiên (được tính chấm công)
+        ArrayList<LocalDate> effectiveLeaveDates = new ArrayList<>();
+        for (int i = 0; i < approvedLeaveDates.size() && i < 12; i++) {
+            effectiveLeaveDates.add(approvedLeaveDates.get(i));
+        }
+        
+        // Tạo panel chứa các checkbox cho mỗi ngày của tháng
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
         for (int day = 1; day <= yearMonth.lengthOfMonth(); day++) {
             LocalDate date = yearMonth.atDay(day);
-            JCheckBox checkBox = new JCheckBox(date.toString());
+            javax.swing.JCheckBox checkBox = new javax.swing.JCheckBox(date.toString());
             
-            // Nếu ngày này nằm trong danh sách chấm công, đánh dấu và đặt màu chữ xanh lá
+            // Nếu ngày này có trong danh sách chấm công (attendance), đánh dấu bằng màu xanh lá
             if (attendanceDates.contains(date)) {
                 checkBox.setSelected(true);
                 checkBox.setForeground(Color.GREEN);
             }
             
-            // Nếu ngày này nằm trong danh sách ngày nghỉ đã duyệt, override với chữ màu đỏ
-            if (approvedLeaveDates.contains(date.toString())) {
-                checkBox.setSelected(true);
-                checkBox.setForeground(Color.RED);
-                checkBox.setToolTipText("Ngày nghỉ đã duyệt");
-                checkBox.setEnabled(false);
-            } else {
-                checkBox.setEnabled(false);
+            // Nếu ngày này có trong danh sách đơn nghỉ đã duyệt, override:
+            if (approvedLeaveDates.contains(date)) {
+                // Nếu đây là một trong 12 ngày đầu tiên, đánh dấu với màu cam (được tính chấm công)
+                if (effectiveLeaveDates.contains(date)) {
+                    checkBox.setSelected(true);
+                    checkBox.setForeground(Color.ORANGE);
+                    checkBox.setToolTipText("Ngày nghỉ đã duyệt (được tính chấm công)");
+                } else {
+                    // Ngày nghỉ vượt quá 12: không được đánh dấu (không tính chấm công)
+                    checkBox.setSelected(false);
+                    checkBox.setForeground(Color.RED);
+                    checkBox.setToolTipText("Ngày nghỉ vượt quá 12 ngày quy định, không được tính chấm công");
+                }
             }
             
+            checkBox.setEnabled(false);
             panel.add(checkBox);
         }
         
-        JScrollPane scrollPane = new JScrollPane(panel);
+        javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(panel);
         panel_chamCong.removeAll();
         panel_chamCong.add(scrollPane);
         panel_chamCong.revalidate();

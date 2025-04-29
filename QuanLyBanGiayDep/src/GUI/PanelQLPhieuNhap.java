@@ -7,8 +7,9 @@ import java.awt.Color;
 public class PanelQLPhieuNhap extends javax.swing.JPanel {
 
     public PanelQLPhieuNhap() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
-        pnpn.setBackground(new Color(148,124,176));
+        pnpn.setBackground(new Color(128,0,64));
         pnctpn.setBackground(new Color(1,50,67));        
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelPhieuNhap());
@@ -146,7 +147,7 @@ public class PanelQLPhieuNhap extends javax.swing.JPanel {
 
     private void pnpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnpnMouseClicked
         panel_View.removeAll();
-        pnpn.setBackground(new Color(148,124,176));
+        pnpn.setBackground(new Color(128,0,64));
         pnctpn.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelPhieuNhap());
@@ -156,7 +157,7 @@ public class PanelQLPhieuNhap extends javax.swing.JPanel {
 
     private void pnctpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnctpnMouseClicked
         panel_View.removeAll();
-        pnctpn.setBackground(new Color(148,124,176));
+        pnctpn.setBackground(new Color(128,0,64));
         pnpn.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelChiTietPhieuNhap());

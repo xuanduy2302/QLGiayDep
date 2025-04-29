@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
+import java.awt.Color;
 
 
 public class Login extends javax.swing.JFrame {
@@ -59,7 +60,7 @@ public class Login extends javax.swing.JFrame {
         setLocation(new java.awt.Point(400, 300));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel1.setBackground(new Color(1, 96, 158));
 
         jLabel1.setBackground(new java.awt.Color(153, 187, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -77,7 +78,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/padlock.png"))); // NOI18N
         jLabel3.setText("Mật khẩu:");
 
-        bt_login.setBackground(new java.awt.Color(153, 187, 255));
+        bt_login.setBackground(new Color(76, 175, 80));
         bt_login.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_login.setText("Đăng nhập");
         bt_login.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -88,7 +89,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        bt_exit.setBackground(new java.awt.Color(204, 0, 0));
+        bt_exit.setBackground(new Color(244, 67, 54));
         bt_exit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bt_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logout.png"))); // NOI18N
         bt_exit.setText("Thoát");

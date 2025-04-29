@@ -20,6 +20,7 @@ public class PanelLoaiSanPham extends javax.swing.JPanel {
     LoaiSanPhamBUS bus = new LoaiSanPhamBUS();
     LoaiSanPhamDTO tl = new LoaiSanPhamDTO();
     public PanelLoaiSanPham() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         initData();
         initEvent();

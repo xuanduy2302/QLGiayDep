@@ -7,9 +7,10 @@ import java.awt.Color;
 public class PanelQLPhieuXuat extends javax.swing.JPanel {
 
     public PanelQLPhieuXuat() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         panel_View.removeAll();
-        pnhd.setBackground(new Color(148,124,176));
+        pnhd.setBackground(new Color(128,0,64));
         pncthd.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelPhieuXuat());
@@ -29,7 +30,7 @@ public class PanelQLPhieuXuat extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         panel_View = new javax.swing.JPanel();
 
-        pn_all.setBackground(new java.awt.Color(204, 204, 255));
+        pn_all.setBackground(new Color(240, 240, 240));
 
         pn_tieude.setBackground(new java.awt.Color(1, 50, 67));
 
@@ -97,7 +98,7 @@ public class PanelQLPhieuXuat extends javax.swing.JPanel {
                 .addComponent(pncthd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        panel_View.setBackground(new java.awt.Color(255, 255, 255));
+        panel_View.setBackground(new Color(240, 240, 240));
 
         javax.swing.GroupLayout panel_ViewLayout = new javax.swing.GroupLayout(panel_View);
         panel_View.setLayout(panel_ViewLayout);
@@ -147,7 +148,7 @@ public class PanelQLPhieuXuat extends javax.swing.JPanel {
 
     private void pnhdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnhdMouseClicked
         panel_View.removeAll();
-        pnhd.setBackground(new Color(148,124,176));
+        pnhd.setBackground(new Color(128,0,64));
         pncthd.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelPhieuXuat());
@@ -157,7 +158,7 @@ public class PanelQLPhieuXuat extends javax.swing.JPanel {
 
     private void pncthdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pncthdMouseClicked
         panel_View.removeAll();
-        pncthd.setBackground(new Color(148,124,176));
+        pncthd.setBackground(new Color(128,0,64));
         pnhd.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelChiTietPhieuXuat());

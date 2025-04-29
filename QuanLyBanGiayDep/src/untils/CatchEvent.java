@@ -143,8 +143,8 @@ public class CatchEvent {
                danhmuc.getPnName().setBackground(new Color(1,50,67));
                danhmuc.getLbName().setBackground(new Color(1,50,67));
            } else {
-               danhmuc.getLbName().setBackground(new Color(148,124,176));
-               danhmuc.getPnName().setBackground(new Color(148,124,176));
+               danhmuc.getLbName().setBackground(new Color(128,0,64));
+               danhmuc.getPnName().setBackground(new Color(128,0,64));
            }
        }
     }

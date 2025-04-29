@@ -7,6 +7,7 @@ import java.awt.Color;
 public class PanelQLNhanVien extends javax.swing.JPanel {
 
     public PanelQLNhanVien() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         pnpn.setBackground(new Color(148,124,176));
         pnctpn.setBackground(new Color(1,50,67));        

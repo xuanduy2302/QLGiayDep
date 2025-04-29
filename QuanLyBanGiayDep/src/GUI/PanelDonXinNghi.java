@@ -165,22 +165,40 @@ public class PanelDonXinNghi extends JPanel {
                     // Kiểm tra ngày nghỉ phải sau ngày hiện tại 7 ngày
                     LocalDate minValidDate = LocalDate.now().plusDays(7);
                     if (!ngayNghiDate.isAfter(minValidDate.minusDays(1))) {  
-                        // Có thể dùng isBefore() hoặc equals() tùy ý: ở đây yêu cầu phải sau 7 ngày
                         JOptionPane.showMessageDialog(CreateDonXinNghiForm.this, "Ngày nghỉ phải sau " + minValidDate.toString() + " (sau 7 ngày kể từ hôm nay)!");
                         return;
                     }
                     
-                    // Mã đơn để rỗng, DAO sẽ tự sinh mã
-                    String maDon = "";
-                    // Lấy mã nhân viên từ Login (đã gán chính xác sau đăng nhập)
+                    // Kiểm tra số ngày nghỉ đã được duyệt trong năm hiện tại
                     String maNV = GUI.Login.maNV;
-                    // Ngày nộp đơn: ngày hiện tại
+                    ArrayList<String> approvedDatesStr = donBUS.getApprovedLeaveDates(maNV);
+                    ArrayList<LocalDate> approvedDates = new ArrayList<>();
+                    for(String d : approvedDatesStr) {
+                        try {
+                            LocalDate ld = LocalDate.parse(d);
+                            if (ld.getYear() == LocalDate.now().getYear()) {
+                                approvedDates.add(ld);
+                            }
+                        } catch(Exception ex) {
+                            // Bỏ qua nếu định dạng không hợp lệ
+                        }
+                    }
+                    approvedDates.sort(null);
+                    if (approvedDates.size() >= 12) {
+                        JOptionPane.showMessageDialog(CreateDonXinNghiForm.this, "Bạn đã đạt đủ 12 ngày nghỉ được tính chấm công. Đơn này sẽ không được tính vào chấm công.");
+                        // Không return: vẫn cho tạo đơn mới
+                    }
+                    
+                    // Mã đơn để rỗng, DAO sẽ tự sinh mã nếu không có
+                    String maDon = "";
+                    // Ngày nộp đơn là ngày hiện tại
                     String ngayNopDon = LocalDate.now().toString();
-                    // Ngày duyệt: để trống
+                    // Ngày duyệt ban đầu để trống
                     String ngayDuyet = "";
-                    // Trạng thái mặc định: ChuaXuLy
+                    // Trạng thái mặc định là ChuaXuLy
                     DonXinNghiDTO.Status trangThai = DonXinNghiDTO.Status.ChuaXuLy;
                     
+                    // Tạo đối tượng đơn xin nghỉ
                     DonXinNghiDTO don = new DonXinNghiDTO(maDon, maNV, lyDo, ngayNghi, ngayNopDon, ngayDuyet, trangThai);
                     int res = donBUS.themDonXinNghi(don);
                     if (res == 1) {
@@ -192,6 +210,8 @@ public class PanelDonXinNghi extends JPanel {
                     }
                 }
             });
+
+
 
 
 

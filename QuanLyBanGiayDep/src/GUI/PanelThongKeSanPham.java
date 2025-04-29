@@ -27,6 +27,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
 import BUS.SanPhamBUS;
+import java.awt.Color;
+import java.awt.Font;
 
 public class PanelThongKeSanPham extends javax.swing.JPanel {
     
@@ -68,9 +70,9 @@ public class PanelThongKeSanPham extends javax.swing.JPanel {
 
         panelforall.setBackground(new java.awt.Color(238, 241, 245));
 
-        tittle2.setBackground(new java.awt.Color(255, 255, 0));
+        tittle2.setBackground(new Color(0, 128, 192));
 
-        lblTitleTC2.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        lblTitleTC2.setFont(new Font("Tahoma", Font.BOLD, 28)); // NOI18N
         lblTitleTC2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitleTC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         lblTitleTC2.setText("Thống kê sản phẩm");
@@ -105,7 +107,7 @@ public class PanelThongKeSanPham extends javax.swing.JPanel {
 
         jComboBox_month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        panel_tkl.setBackground(new java.awt.Color(255, 0, 204));
+        panel_tkl.setBackground(new Color(255, 255, 255));
 
         javax.swing.GroupLayout panel_chartLayout = new javax.swing.GroupLayout(panel_chart);
         panel_chart.setLayout(panel_chartLayout);

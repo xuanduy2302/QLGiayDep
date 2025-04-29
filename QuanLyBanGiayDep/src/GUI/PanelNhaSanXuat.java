@@ -21,6 +21,7 @@ public class PanelNhaSanXuat extends javax.swing.JPanel {
     NhaSanXuatDTO tg = new NhaSanXuatDTO();    
     
     public PanelNhaSanXuat() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         initData();
         initEvent();

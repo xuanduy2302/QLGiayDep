@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import BUS.LoginBUS;
+import java.awt.Color;
+import java.awt.Font;
 
 public class PanelDoiPass extends javax.swing.JPanel {
     
@@ -15,6 +17,7 @@ public class PanelDoiPass extends javax.swing.JPanel {
         String username = Login.username;
         
     public PanelDoiPass() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
     }
     
@@ -46,14 +49,16 @@ public class PanelDoiPass extends javax.swing.JPanel {
         txt_xn = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         btn_xn = new javax.swing.JButton();
+        btn_xn.setBackground(new Color(76, 175, 80));
         btn_huy = new javax.swing.JButton();
+        btn_huy.setBackground(new Color(244, 67, 54));
         pn_end = new javax.swing.JPanel();
 
         panelforall.setBackground(new java.awt.Color(238, 241, 245));
 
-        tittle2.setBackground(new java.awt.Color(255, 255, 0));
+        tittle2.setBackground(new Color(0, 128, 192));
 
-        lblTitleTC2.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        lblTitleTC2.setFont(new Font("Tahoma", Font.BOLD, 28)); // NOI18N
         lblTitleTC2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitleTC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         lblTitleTC2.setText("Cài đặt tài khoản");
@@ -76,7 +81,7 @@ public class PanelDoiPass extends javax.swing.JPanel {
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 26)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel1.setForeground(new Color(66, 165, 245));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Đổi mật khẩu");
 

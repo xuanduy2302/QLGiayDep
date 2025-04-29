@@ -21,6 +21,7 @@ public class PanelNhanVienAdmin extends javax.swing.JPanel {
     NhanVienBUS bus = new NhanVienBUS();
     ArrayList<NhanVienDTO> arr = new ArrayList<NhanVienDTO>();    
     public PanelNhanVienAdmin() {
+    	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
         initData();
         initEvent();
