@@ -29,7 +29,7 @@ public class PanelQLPhieuNhap extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         panel_View = new javax.swing.JPanel();
 
-        pn_all.setBackground(new java.awt.Color(204, 204, 255));
+        pn_all.setBackground(new Color(240, 240, 240));
 
         pn_tieude.setBackground(new java.awt.Color(1, 50, 67));
 

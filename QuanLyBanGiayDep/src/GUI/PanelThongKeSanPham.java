@@ -29,6 +29,8 @@ import BUS.NhanVienBUS;
 import BUS.SanPhamBUS;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class PanelThongKeSanPham extends javax.swing.JPanel {
     
@@ -78,21 +80,21 @@ public class PanelThongKeSanPham extends javax.swing.JPanel {
         lblTitleTC2.setText("Thống kê sản phẩm");
 
         javax.swing.GroupLayout tittle2Layout = new javax.swing.GroupLayout(tittle2);
-        tittle2.setLayout(tittle2Layout);
         tittle2Layout.setHorizontalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addGap(319, 319, 319)
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(265, 265, 265))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addGap(254)
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 384, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(265, Short.MAX_VALUE))
         );
         tittle2Layout.setVerticalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(19, Short.MAX_VALUE))
         );
+        tittle2.setLayout(tittle2Layout);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Năm");
@@ -107,7 +109,7 @@ public class PanelThongKeSanPham extends javax.swing.JPanel {
 
         jComboBox_month.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        panel_tkl.setBackground(new Color(255, 255, 255));
+        panel_tkl.setBackground(new Color(240, 240, 240));
 
         javax.swing.GroupLayout panel_chartLayout = new javax.swing.GroupLayout(panel_chart);
         panel_chart.setLayout(panel_chartLayout);

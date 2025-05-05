@@ -23,6 +23,8 @@ import BUS.LoginBUS;
 import BUS.NhanVienBUS;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class PanelThongKeLuong extends javax.swing.JPanel {
     
@@ -66,21 +68,21 @@ public class PanelThongKeLuong extends javax.swing.JPanel {
         lblTitleTC2.setText("Thống kê lương");
 
         javax.swing.GroupLayout tittle2Layout = new javax.swing.GroupLayout(tittle2);
-        tittle2.setLayout(tittle2Layout);
         tittle2Layout.setHorizontalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tittle2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(315, 315, 315))
+        	tittle2Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap(215, Short.MAX_VALUE)
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 511, GroupLayout.PREFERRED_SIZE)
+        			.addGap(177))
         );
         tittle2Layout.setVerticalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(19, Short.MAX_VALUE))
         );
+        tittle2.setLayout(tittle2Layout);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Năm");
@@ -95,7 +97,7 @@ public class PanelThongKeLuong extends javax.swing.JPanel {
 
         jComboBox_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025" }));
 
-        panel_tkl.setBackground(new Color(255, 255, 255));
+        panel_tkl.setBackground(new Color(240, 240, 240));
 
         javax.swing.GroupLayout panel_chartLayout = new javax.swing.GroupLayout(panel_chart);
         panel_chart.setLayout(panel_chartLayout);

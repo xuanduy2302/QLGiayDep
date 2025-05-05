@@ -21,6 +21,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import java.awt.Font;
+import java.awt.Color;
 
 public class PanelDuyetDonXinNghi extends JPanel {
 
@@ -43,7 +45,7 @@ public class PanelDuyetDonXinNghi extends JPanel {
         
         // Tiêu đề
         JLabel lblTitle = new JLabel("Duyệt Đơn Xin Nghỉ", JLabel.CENTER);
-        lblTitle.setFont(lblTitle.getFont().deriveFont(20f));
+        lblTitle.setFont(new Font("Tahoma", Font.BOLD, 24));
         this.add(lblTitle, BorderLayout.NORTH);
         
         // Panel tìm kiếm và lọc
@@ -74,35 +76,8 @@ public class PanelDuyetDonXinNghi extends JPanel {
         // Panel xử lý duyệt/từ chối
         JPanel panelAction = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
         btnDuyet = new JButton("Duyệt");
-        btnTuChoi = new JButton("Từ chối");
+        btnDuyet.setBackground(new Color(76, 175, 80));
         panelAction.add(btnDuyet);
-        panelAction.add(btnTuChoi);
-        this.add(panelAction, BorderLayout.EAST);
-        
-        // Sự kiện tìm kiếm & lọc
-        txtSearch.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                applyFilter();
-            }
-        });
-        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                applyFilter();
-            }
-        });
-        cbStatus.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                applyFilter();
-            }
-        });
-        
-        // Sự kiện chọn dòng trong bảng
-        tableDonXinNghi.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // Bạn có thể thêm xử lý khi chọn đơn
-            }
-        });
         
         // Sự kiện duyệt đơn
         btnDuyet.addActionListener(new ActionListener() {
@@ -134,36 +109,65 @@ public class PanelDuyetDonXinNghi extends JPanel {
                 }
             }
         });
-
+        btnTuChoi = new JButton("Từ chối");
+        btnTuChoi.setBackground(new Color(244, 67, 54));
+        panelAction.add(btnTuChoi);
         
-        // Sự kiện từ chối đơn
-        btnTuChoi.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int selectedRow = tableDonXinNghi.getSelectedRow();
-                if (selectedRow < 0) {
-                    JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Vui lòng chọn đơn cần từ chối!");
-                    return;
-                }
-                int modelRow = tableDonXinNghi.convertRowIndexToModel(selectedRow);
-                String maDon = model.getValueAt(modelRow, 0).toString();
-                String currentStatus = model.getValueAt(modelRow, 6).toString();
-                // Nếu đơn không ở trạng thái "ChuaXuLy", không cho từ chối lại
-                if (!currentStatus.equals("ChuaXuLy")) {
-                    JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Đơn đã được xử lý. Không thể từ chối lại!");
-                    return;
-                }
-                String ngayDuyet = java.time.LocalDate.now().toString();
-                int confirm = JOptionPane.showConfirmDialog(PanelDuyetDonXinNghi.this, "Xác nhận từ chối đơn: " + maDon, "Xác nhận", JOptionPane.YES_NO_OPTION);
-                if (confirm == JOptionPane.YES_OPTION) {
-                    int res = donBUS.tuChoiDonXinNghi(maDon, ngayDuyet);
-                    if (res == 1) {
-                        JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Từ chối đơn thành công!");
-                        loadData();
-                    } else {
-                        JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Lỗi từ chối đơn!");
+                
+                // Sự kiện từ chối đơn
+                btnTuChoi.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        int selectedRow = tableDonXinNghi.getSelectedRow();
+                        if (selectedRow < 0) {
+                            JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Vui lòng chọn đơn cần từ chối!");
+                            return;
+                        }
+                        int modelRow = tableDonXinNghi.convertRowIndexToModel(selectedRow);
+                        String maDon = model.getValueAt(modelRow, 0).toString();
+                        String currentStatus = model.getValueAt(modelRow, 6).toString();
+                        // Nếu đơn không ở trạng thái "ChuaXuLy", không cho từ chối lại
+                        if (!currentStatus.equals("ChuaXuLy")) {
+                            JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Đơn đã được xử lý. Không thể từ chối lại!");
+                            return;
+                        }
+                        String ngayDuyet = java.time.LocalDate.now().toString();
+                        int confirm = JOptionPane.showConfirmDialog(PanelDuyetDonXinNghi.this, "Xác nhận từ chối đơn: " + maDon, "Xác nhận", JOptionPane.YES_NO_OPTION);
+                        if (confirm == JOptionPane.YES_OPTION) {
+                            int res = donBUS.tuChoiDonXinNghi(maDon, ngayDuyet);
+                            if (res == 1) {
+                                JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Từ chối đơn thành công!");
+                                loadData();
+                            } else {
+                                JOptionPane.showMessageDialog(PanelDuyetDonXinNghi.this, "Lỗi từ chối đơn!");
+                            }
+                        }
                     }
-                }
+                });
+        this.add(panelAction, BorderLayout.EAST);
+        
+        // Sự kiện tìm kiếm & lọc
+        txtSearch.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                applyFilter();
+            }
+        });
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                applyFilter();
+            }
+        });
+        cbStatus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                applyFilter();
+            }
+        });
+        
+        // Sự kiện chọn dòng trong bảng
+        tableDonXinNghi.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // Bạn có thể thêm xử lý khi chọn đơn
             }
         });
 

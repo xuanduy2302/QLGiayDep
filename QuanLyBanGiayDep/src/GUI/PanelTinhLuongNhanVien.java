@@ -20,6 +20,7 @@ import javax.swing.table.TableRowSorter;
 import BUS.NhanVienBUS;
 import DTO.LuongThangDTO;
 import DTO.NhanVienDTO;
+import java.awt.Color;
 
 public class PanelTinhLuongNhanVien extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
@@ -180,10 +181,10 @@ public class PanelTinhLuongNhanVien extends javax.swing.JPanel {
             }
         };
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new Color(240, 240, 240));
 
         pn_ttnv.setBackground(new java.awt.Color(255, 255, 255));
-        pn_ttnv.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(255, 102, 102))); // NOI18N
+        pn_ttnv.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         lb_nv.setText("Mã nhân viên:");
 
@@ -236,10 +237,10 @@ public class PanelTinhLuongNhanVien extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pn_donv.setBackground(new java.awt.Color(255, 255, 204));
+        pn_donv.setBackground(new Color(255, 255, 255));
         pn_donv.setBorder(javax.swing.BorderFactory.createTitledBorder("Thực hiện"));
 
-        bt_addnv.setBackground(new java.awt.Color(204, 204, 204));
+        bt_addnv.setBackground(new Color(255, 204, 102));
         bt_addnv.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_addnv.setText("Tính Lương Tất Cả Nhân Viên");
         bt_addnv.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +255,7 @@ public class PanelTinhLuongNhanVien extends javax.swing.JPanel {
             }
         });
 
-        bt_tinhLuong.setBackground(new java.awt.Color(204, 204, 204));
+        bt_tinhLuong.setBackground(new Color(255, 204, 102));
         bt_tinhLuong.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_tinhLuong.setText("Tính Lương");
         bt_tinhLuong.setMaximumSize(new java.awt.Dimension(65, 23));
@@ -296,7 +297,7 @@ public class PanelTinhLuongNhanVien extends javax.swing.JPanel {
                 .addGap(13, 13, 13))
         );
 
-        pn_findnv.setBackground(new java.awt.Color(204, 255, 204));
+        pn_findnv.setBackground(new Color(240, 240, 240));
         pn_findnv.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
 
         txt_findnv.addActionListener(new java.awt.event.ActionListener() {

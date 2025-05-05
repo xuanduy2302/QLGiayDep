@@ -17,6 +17,10 @@ import BUS.ChiTietPhieuNhapBUS;
 import BUS.PhieuNhapBUS;
 import DTO.ChiTietPhieuNhapDTO;
 import DTO.PhieuNhapDTO;
+import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class PanelPhieuNhap extends javax.swing.JPanel {
     DefaultTableModel model1 = new DefaultTableModel();
@@ -212,11 +216,12 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
         cb_TimKiem = new javax.swing.JComboBox<>();
         txt_TimKiem = new javax.swing.JTextField();
         btn_TimKiem = new javax.swing.JButton();
+        btn_TimKiem.setBackground(new Color(204, 204, 204));
 
-        pn_all.setBackground(new java.awt.Color(204, 204, 255));
+        pn_all.setBackground(new Color(240, 240, 240));
 
         pn_ttpn.setBackground(new java.awt.Color(255, 255, 255));
-        pn_ttpn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin phiếu nhập", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(255, 102, 102))); // NOI18N
+        pn_ttpn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin phiếu nhập", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         lb_mpn.setText("Mã phiếu nhập:");
 
@@ -294,10 +299,10 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        pn_dopn.setBackground(new java.awt.Color(255, 255, 204));
+        pn_dopn.setBackground(new Color(255, 255, 255));
         pn_dopn.setBorder(javax.swing.BorderFactory.createTitledBorder("Thực hiện"));
 
-        bt_addpn.setBackground(new java.awt.Color(204, 204, 204));
+        bt_addpn.setBackground(new Color(76, 175, 80));
         bt_addpn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_addpn.setText("Thêm");
         bt_addpn.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +311,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
             }
         });
 
-        bt_resetpn.setBackground(new java.awt.Color(204, 204, 204));
+        bt_resetpn.setBackground(new Color(66, 165, 245));
         bt_resetpn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_resetpn.setText("Reset");
         bt_resetpn.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +320,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
             }
         });
 
-        bt_changepn.setBackground(new java.awt.Color(204, 204, 204));
+        bt_changepn.setBackground(new Color(255, 193, 7));
         bt_changepn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_changepn.setText("Sửa");
         bt_changepn.setMaximumSize(new java.awt.Dimension(65, 23));
@@ -328,29 +333,32 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
         });
 
         javax.swing.GroupLayout pn_dopnLayout = new javax.swing.GroupLayout(pn_dopn);
-        pn_dopn.setLayout(pn_dopnLayout);
         pn_dopnLayout.setHorizontalGroup(
-            pn_dopnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_dopnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_changepn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_addpn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_resetpn, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
+        	pn_dopnLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(Alignment.TRAILING, pn_dopnLayout.createSequentialGroup()
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addComponent(bt_addpn, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(bt_changepn, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(bt_resetpn, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+        			.addGap(53))
         );
         pn_dopnLayout.setVerticalGroup(
-            pn_dopnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bt_changepn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bt_resetpn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bt_addpn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        	pn_dopnLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(pn_dopnLayout.createParallelGroup(Alignment.BASELINE)
+        			.addComponent(bt_addpn, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+        			.addComponent(bt_changepn, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+        		.addGroup(pn_dopnLayout.createSequentialGroup()
+        			.addComponent(bt_resetpn, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        pn_dopn.setLayout(pn_dopnLayout);
 
-        pn_findpn.setBackground(new java.awt.Color(204, 255, 204));
+        pn_findpn.setBackground(new Color(255, 255, 255));
         pn_findpn.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm nâng cao"));
 
-        cb_tknc.setBackground(new java.awt.Color(255, 255, 204));
+        cb_tknc.setBackground(new Color(240, 240, 240));
         cb_tknc.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cb_tknc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thành tiền", "Ngày nhập" }));
         cb_tknc.addActionListener(new java.awt.event.ActionListener() {
@@ -368,7 +376,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
             }
         });
 
-        pn_fromto.setBackground(new java.awt.Color(204, 255, 204));
+        pn_fromto.setBackground(new Color(240, 240, 240));
 
         jLabel1.setText("Từ:");
 
@@ -462,7 +470,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
         );
 
         pn_phieunhap.setBackground(new java.awt.Color(255, 255, 255));
-        pn_phieunhap.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phiếu nhập", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 0, 0))); // NOI18N
+        pn_phieunhap.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phiếu nhập", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         tb_pnhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -502,7 +510,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
         );
 
         pn_chitietpn.setBackground(new java.awt.Color(255, 255, 255));
-        pn_chitietpn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 102, 102))); // NOI18N
+        pn_chitietpn.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         tb_ctpnhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -529,7 +537,7 @@ public class PanelPhieuNhap extends javax.swing.JPanel {
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tìm kiếm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 0, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tìm kiếm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         cb_TimKiem.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cb_TimKiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã phiếu nhập", "Mã nhân viên", "Mã nhà cung cấp" }));

@@ -20,6 +20,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Font;
+import java.awt.Color;
 
 public class PanelDonXinNghi extends JPanel {
 
@@ -39,7 +41,7 @@ public class PanelDonXinNghi extends JPanel {
         this.setLayout(new BorderLayout());
         // Tạo tiêu đề cho panel
         JLabel lblTitle = new JLabel("Đơn Xin Nghỉ Của Tôi", SwingConstants.CENTER);
-        lblTitle.setFont(lblTitle.getFont().deriveFont(18f));
+        lblTitle.setFont(new Font("Tahoma", Font.BOLD, 24));
         this.add(lblTitle, BorderLayout.NORTH);
 
         // Bảng hiển thị đơn xin nghỉ
@@ -57,7 +59,9 @@ public class PanelDonXinNghi extends JPanel {
         // Panel chứa các nút chức năng
         JPanel pnlButtons = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         btnTaoDon = new JButton("Tạo đơn xin nghỉ");
+        btnTaoDon.setBackground(new Color(76, 175, 80));
         btnRefresh = new JButton("Refresh");
+        btnRefresh.setBackground(new Color(66, 165, 245));
         pnlButtons.add(btnTaoDon);
         pnlButtons.add(btnRefresh);
         this.add(pnlButtons, BorderLayout.SOUTH);

@@ -9,6 +9,9 @@ import javax.swing.JOptionPane;
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
 import DTO.NhanVienDTO;
+import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class PanelTaiKhoanCaNhan extends javax.swing.JPanel {
     
@@ -55,7 +58,9 @@ public class PanelTaiKhoanCaNhan extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btn_xn = new javax.swing.JButton();
+        btn_xn.setBackground(new Color(76, 175, 80));
         btn_huy = new javax.swing.JButton();
+        btn_huy.setBackground(new Color(244, 67, 54));
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txt_id = new javax.swing.JTextField();
@@ -65,29 +70,29 @@ public class PanelTaiKhoanCaNhan extends javax.swing.JPanel {
 
         panelforall.setBackground(new java.awt.Color(238, 241, 245));
 
-        tittle2.setBackground(new java.awt.Color(255, 255, 0));
+        tittle2.setBackground(new Color(0, 128, 192));
 
-        lblTitleTC2.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        lblTitleTC2.setFont(new Font("Tahoma", Font.BOLD, 28)); // NOI18N
         lblTitleTC2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitleTC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
         lblTitleTC2.setText("Tài khoản Của Tôi");
 
         javax.swing.GroupLayout tittle2Layout = new javax.swing.GroupLayout(tittle2);
-        tittle2.setLayout(tittle2Layout);
         tittle2Layout.setHorizontalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tittle2Layout.createSequentialGroup()
-                .addContainerGap(368, Short.MAX_VALUE)
-                .addComponent(lblTitleTC2)
-                .addGap(349, 349, 349))
+        	tittle2Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addGap(328)
+        			.addComponent(lblTitleTC2, GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+        			.addGap(51))
         );
         tittle2Layout.setVerticalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(19, Short.MAX_VALUE))
         );
+        tittle2.setLayout(tittle2Layout);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jLabel2.setText("Tài Khoản");

@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import BUS.LoginBUS;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class PanelDoiPass extends javax.swing.JPanel {
     
@@ -64,21 +66,21 @@ public class PanelDoiPass extends javax.swing.JPanel {
         lblTitleTC2.setText("Cài đặt tài khoản");
 
         javax.swing.GroupLayout tittle2Layout = new javax.swing.GroupLayout(tittle2);
-        tittle2.setLayout(tittle2Layout);
         tittle2Layout.setHorizontalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tittle2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitleTC2)
-                .addGap(349, 349, 349))
+        	tittle2Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap(396, Short.MAX_VALUE)
+        			.addComponent(lblTitleTC2)
+        			.addGap(294))
         );
         tittle2Layout.setVerticalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(Alignment.TRAILING, tittle2Layout.createSequentialGroup()
+        			.addContainerGap(19, Short.MAX_VALUE)
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
         );
+        tittle2.setLayout(tittle2Layout);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 26)); // NOI18N
         jLabel1.setForeground(new Color(66, 165, 245));
@@ -167,7 +169,7 @@ public class PanelDoiPass extends javax.swing.JPanel {
                 .addGap(71, 71, 71))
         );
 
-        pn_end.setBackground(new java.awt.Color(0, 0, 0));
+        pn_end.setBackground(new Color(240, 240, 240));
 
         javax.swing.GroupLayout pn_endLayout = new javax.swing.GroupLayout(pn_end);
         pn_end.setLayout(pn_endLayout);

@@ -17,6 +17,7 @@ import BUS.ChiTietPhieuXuatBUS;
 import BUS.PhieuXuatBUS;
 import DTO.ChiTietPhieuXuatDTO;
 import DTO.PhieuXuatDTO;
+import java.awt.Color;
 
 public class PanelPhieuXuat extends javax.swing.JPanel {
     DefaultTableModel model1 = new DefaultTableModel();
@@ -210,11 +211,11 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
         btn_suaHD = new javax.swing.JButton();
         btn_resetHD = new javax.swing.JButton();
 
-        pn_all.setBackground(new java.awt.Color(204, 204, 255));
+        pn_all.setBackground(new Color(240, 240, 240));
         pn_all.setPreferredSize(new java.awt.Dimension(931, 680));
 
         pn_tthd.setBackground(new java.awt.Color(255, 255, 255));
-        pn_tthd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin phiếu xuất", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(255, 102, 102))); // NOI18N
+        pn_tthd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin phiếu xuất", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         lb_mhd.setText("Mã hóa đơn:");
 
@@ -277,7 +278,7 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
         );
 
         pn_cthd.setBackground(new java.awt.Color(255, 255, 255));
-        pn_cthd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 102, 102))); // NOI18N
+        pn_cthd.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chi tiết", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         tb_cthd.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -338,7 +339,7 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
                 .addComponent(btn_TimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pn_tknc.setBackground(new java.awt.Color(255, 255, 204));
+        pn_tknc.setBackground(new Color(255, 255, 255));
         pn_tknc.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm nâng cao"));
 
         cb_tknc.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -366,7 +367,7 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
             }
         });
 
-        pn_fromto.setBackground(new java.awt.Color(255, 255, 204));
+        pn_fromto.setBackground(new Color(240, 240, 240));
 
         date_from.setDateFormatString("yyyy-MM-dd");
 
@@ -475,10 +476,10 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Thực hiện"));
 
-        btn_themHD.setBackground(new java.awt.Color(204, 204, 204));
+        btn_themHD.setBackground(new Color(76, 175, 80));
         btn_themHD.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_themHD.setText("Thêm");
         btn_themHD.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +488,7 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
             }
         });
 
-        btn_suaHD.setBackground(new java.awt.Color(204, 204, 204));
+        btn_suaHD.setBackground(new Color(255, 193, 7));
         btn_suaHD.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_suaHD.setText("Sửa");
         btn_suaHD.addActionListener(new java.awt.event.ActionListener() {
@@ -496,7 +497,7 @@ public class PanelPhieuXuat extends javax.swing.JPanel {
             }
         });
 
-        btn_resetHD.setBackground(new java.awt.Color(204, 204, 204));
+        btn_resetHD.setBackground(new Color(66, 165, 245));
         btn_resetHD.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_resetHD.setText("Reset");
         btn_resetHD.addMouseListener(new java.awt.event.MouseAdapter() {

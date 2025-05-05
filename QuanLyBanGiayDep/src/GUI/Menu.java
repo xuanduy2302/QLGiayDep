@@ -18,12 +18,14 @@ public class Menu extends javax.swing.JFrame {
     private static final int QUAN_LY = 3;
     private static final int NHAN_VIEN_KHO = 2;
     private static final int NHAN_VIEN_BAN_HANG = 1;
-    private static final Color COLOR_BACKGROUND = Color.decode("#FFFFFF");
-    private static final Color COLOR_MENU = Color.decode("#3F51B5");
+    private static final Color COLOR_BACKGROUND = new Color(240,240,240);
+    private static final Color COLOR_MENU = new Color(61, 81, 179);
     private static final Color COLOR_HEADER = Color.decode("#FFC107");
-    private static final Color COLOR_ITEM = Color.decode("#FFFFFF");
+   // private static final Color COLOR_ITEM = Color.decode("#FFFFFF");
 
     public Menu() {
+    	getContentPane().setBackground(new Color(240, 240, 240));
+    	setBackground(new Color(240, 240, 240));
         initComponents();
         int check = Login.check;
         this.setLocationRelativeTo(null);
@@ -44,14 +46,14 @@ public class Menu extends javax.swing.JFrame {
 
         // Panel menu bên trái
         pn_menu.setBackground(COLOR_MENU);
-        pn_inmenu.setBackground(COLOR_MENU.darker());
+       // pn_inmenu.setBackground(COLOR_MENU.darker());
 
         // Thanh tiêu đề trên cùng
         pn_exit.setBackground(COLOR_MENU.darker());
         pn_tieude.setBackground(COLOR_HEADER);
 
         // Các mục trong menu (dùng cùng một màu item)
-        pn_trangchu.setBackground(COLOR_ITEM);
+   /*    pn_trangchu.setBackground(COLOR_ITEM);
         pn_product.setBackground(COLOR_ITEM);
         pn_dxn.setBackground(COLOR_ITEM);
         pn_ddxn.setBackground(COLOR_ITEM);
@@ -65,7 +67,7 @@ public class Menu extends javax.swing.JFrame {
         pn_tkcn.setBackground(COLOR_ITEM);
         pn_tkl.setBackground(COLOR_ITEM);
         pn_tksp.setBackground(COLOR_ITEM);
-        pn_tkspx.setBackground(COLOR_ITEM);
+        pn_tkspx.setBackground(COLOR_ITEM); */
     }
 
     public ArrayList<Danhmuc> initMenu(int n) {
@@ -197,8 +199,14 @@ public class Menu extends javax.swing.JFrame {
         lb_exit = new javax.swing.JLabel();
         lbl_chao = new javax.swing.JLabel();
         btn_doiMK = new javax.swing.JButton();
+        btn_doiMK.setForeground(new Color(0, 0, 0));
+        btn_doiMK.setBackground(new Color(240, 240, 240));
         btn_chamCong = new javax.swing.JButton();
+        btn_chamCong.setForeground(new Color(0, 0, 0));
+        btn_chamCong.setBackground(new Color(240, 240, 240));
         btn_xemLuong = new javax.swing.JButton();
+        btn_xemLuong.setForeground(new Color(0, 0, 0));
+        btn_xemLuong.setBackground(new Color(240, 240, 240));
         btn_logout = new javax.swing.JButton();
         btn_logout.setFont(new java.awt.Font("Tahoma", 1, 11)); // Chữ in đậm
         btn_logout.setText("Đăng xuất");
@@ -216,15 +224,15 @@ public class Menu extends javax.swing.JFrame {
         setModalExclusionType(null);
         setUndecorated(true);
 
-        pn_all.setBackground(new java.awt.Color(204, 255, 204));
+        pn_all.setBackground(new Color(240, 240, 240));
 
-        pn_menu.setBackground(new Color(240, 240, 240));
+        pn_menu.setBackground(new Color(1, 50, 67));
 
-        pn_inmenu.setBackground(new java.awt.Color(0, 102, 0));
+        pn_inmenu.setBackground(new Color(1, 50, 67));
 
-        pn_tieude.setBackground(new Color(0, 128, 192));
+        pn_tieude.setBackground(new Color(1, 50, 67));
 
-        lb_tieude.setBackground(new java.awt.Color(0, 0, 204));
+        lb_tieude.setBackground(new java.awt.Color(61,81,179));
         lb_tieude.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         lb_tieude.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_tieude.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/house.png"))); // NOI18N
@@ -248,7 +256,7 @@ public class Menu extends javax.swing.JFrame {
         );
         pn_tieude.setLayout(pn_tieudeLayout);
 
-        pn_product.setBackground(new java.awt.Color(148, 124, 176));
+        pn_product.setBackground(new Color(1, 50, 67));
         pn_product.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_product.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -273,13 +281,13 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(lb_product, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
         // Don Xin nghi
-        pn_dxn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_dxn.setBackground(new Color(1, 50, 67));
         pn_dxn.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_dxn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
         lb_dxn.setForeground(new java.awt.Color(255, 255, 255));
         lb_dxn.setText("Đơn xin nghỉ");
-        lb_dxn.addMouseListener(new java.awt.event.MouseAdapter() {
+       /* lb_dxn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 // Sự kiện khi nhấn vào label, bạn có thể để xử lý tại đây hoặc để CatchEvent xử
                 // lý
@@ -290,7 +298,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_view.validate();
                 pn_view.repaint();
             }
-        });
+        });*/
 
         javax.swing.GroupLayout pn_dxnLayout = new javax.swing.GroupLayout(pn_dxn);
         pn_dxn.setLayout(pn_dxnLayout);
@@ -305,13 +313,13 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(lb_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
         // Duyệt Đơn Xin Nghỉ
-        pn_ddxn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_ddxn.setBackground(new Color(1, 50, 67));
         pn_ddxn.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_ddxn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
         lb_ddxn.setForeground(new java.awt.Color(255, 255, 255));
         lb_ddxn.setText("Duyệt Đơn Xin Nghỉ");
-        lb_ddxn.addMouseListener(new java.awt.event.MouseAdapter() {
+      /*  lb_ddxn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 // Khi nhấn, load PanelDuyetDonXinNghi (giống phần DonXinNghi)
                 pn_view.removeAll();
@@ -320,7 +328,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_view.validate();
                 pn_view.repaint();
             }
-        });
+        });*/
 
         javax.swing.GroupLayout pn_ddxnLayout = new javax.swing.GroupLayout(pn_ddxn);
         pn_ddxn.setLayout(pn_ddxnLayout);
@@ -334,7 +342,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_ddxnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_ddxn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_nv.setBackground(new java.awt.Color(148, 124, 176));
+        pn_nv.setBackground(new Color(1, 50, 67));
         pn_nv.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_nv.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -353,7 +361,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_nvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_nv, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_pn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_pn.setBackground(new Color(1, 50, 67));
         pn_pn.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_pn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -372,7 +380,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_pnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_pn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_hd.setBackground(new java.awt.Color(148, 124, 176));
+        pn_hd.setBackground(new Color(1, 50, 67));
         pn_hd.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_hd.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -392,7 +400,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(lb_hd, javax.swing.GroupLayout.Alignment.TRAILING,
                                 javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_trangchu.setBackground(new java.awt.Color(148, 124, 176));
+        pn_trangchu.setBackground(new Color(1, 50, 67));
         pn_trangchu.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_trangchu.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -411,7 +419,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_trangchuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_trangchu, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_ncc.setBackground(new java.awt.Color(148, 124, 176));
+        pn_ncc.setBackground(new Color(1, 50, 67));
         pn_ncc.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_ncc.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -430,7 +438,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_nccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_ncc, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_loaisanpham.setBackground(new java.awt.Color(148, 124, 176));
+        pn_loaisanpham.setBackground(new Color(1, 50, 67));
         pn_loaisanpham.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_loaisanpham.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -449,7 +457,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_loaisanphamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_loaisanpham, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_nsx.setBackground(new java.awt.Color(148, 124, 176));
+        pn_nsx.setBackground(new Color(1, 50, 67));
         pn_nsx.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_nsx.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -468,7 +476,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_nsxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_nsx, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_qlnv_admin.setBackground(new java.awt.Color(148, 124, 176));
+        pn_qlnv_admin.setBackground(new Color(1, 50, 67));
         pn_qlnv_admin.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_qlnv_admin.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -487,7 +495,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_qlnv_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_qlnv_admin, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_tkcn.setBackground(new java.awt.Color(148, 124, 176));
+        pn_tkcn.setBackground(new Color(1, 50, 67));
         pn_tkcn.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_tkcn.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -506,7 +514,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_tkcnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_tkcn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_tkl.setBackground(new java.awt.Color(148, 124, 176));
+        pn_tkl.setBackground(new Color(1, 50, 67));
         pn_tkl.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_tkl.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -525,7 +533,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_tklLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_tkl, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_tksp.setBackground(new java.awt.Color(148, 124, 176));
+        pn_tksp.setBackground(new Color(1, 50, 67));
         pn_tksp.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_tksp.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -544,7 +552,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_tkspLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lb_tksp, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE));
 
-        pn_tkspx.setBackground(new java.awt.Color(148, 124, 176));
+        pn_tkspx.setBackground(new Color(1, 50, 67));
         pn_tkspx.setPreferredSize(new java.awt.Dimension(246, 60));
 
         lb_tkspx.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
@@ -575,8 +583,8 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(pn_nv, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                         .addComponent(pn_product, javax.swing.GroupLayout.Alignment.TRAILING,
                                 javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                        .addComponent(pn_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE) // Thêm đơn
-                                                                                                          // xin nghỉ
+                        .addComponent(pn_dxn, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)          
+                        .addComponent(pn_ddxn, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)   
                         .addComponent(pn_ncc, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                         .addComponent(pn_loaisanpham, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                         .addComponent(pn_nsx, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
@@ -637,7 +645,8 @@ public class Menu extends javax.swing.JFrame {
                                 .addComponent(pn_tkspx, javax.swing.GroupLayout.PREFERRED_SIZE, 48,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 190, Short.MAX_VALUE)));
-
+        
+        
         pn_inmenu.setLayout(new BoxLayout(pn_inmenu, BoxLayout.Y_AXIS));
 
         javax.swing.GroupLayout pn_menuLayout = new javax.swing.GroupLayout(pn_menu);
@@ -651,7 +660,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(pn_inmenu, javax.swing.GroupLayout.PREFERRED_SIZE,
                                 javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE));
 
-        pn_view.setBackground(new java.awt.Color(204, 255, 204));
+        pn_view.setBackground(new Color(240, 240, 240));
 
         javax.swing.GroupLayout pn_viewLayout = new javax.swing.GroupLayout(pn_view);
         pn_view.setLayout(pn_viewLayout);
@@ -662,7 +671,7 @@ public class Menu extends javax.swing.JFrame {
                 pn_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGap(0, 0, Short.MAX_VALUE));
 
-        pn_exit.setBackground(new java.awt.Color(0, 102, 0));
+        pn_exit.setBackground(new Color(0, 0, 0));
 
         lb_exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/exit1.png"))); // NOI18N

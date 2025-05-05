@@ -16,6 +16,8 @@ import BUS.DonXinNghiBUS;
 import BUS.LoginBUS;
 import BUS.NhanVienBUS;
 import java.awt.Font;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
 
 public class PanelChamCong extends javax.swing.JPanel {
     
@@ -55,21 +57,21 @@ public class PanelChamCong extends javax.swing.JPanel {
         lblTitleTC2.setText("Chấm Công");
 
         javax.swing.GroupLayout tittle2Layout = new javax.swing.GroupLayout(tittle2);
-        tittle2.setLayout(tittle2Layout);
         tittle2Layout.setHorizontalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tittle2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(382, 382, 382))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(Alignment.TRAILING, tittle2Layout.createSequentialGroup()
+        			.addContainerGap(344, Short.MAX_VALUE)
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 316, GroupLayout.PREFERRED_SIZE)
+        			.addGap(259))
         );
         tittle2Layout.setVerticalGroup(
-            tittle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tittle2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitleTC2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        	tittle2Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(tittle2Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(lblTitleTC2, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(19, Short.MAX_VALUE))
         );
+        tittle2.setLayout(tittle2Layout);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Tháng");

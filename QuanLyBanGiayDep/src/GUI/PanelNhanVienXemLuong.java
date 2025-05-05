@@ -46,6 +46,7 @@ import DTO.LuongThangDTO;
 import DTO.NhanVienDTO;
 import untils.CurrencyUtil;
 import untils.XemTinhLuongUtil;
+import java.awt.Color;
 
 public class PanelNhanVienXemLuong extends javax.swing.JPanel {
     DefaultTableModel model = new DefaultTableModel();
@@ -198,10 +199,10 @@ public class PanelNhanVienXemLuong extends javax.swing.JPanel {
             }
         };
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new Color(240, 240, 240));
 
         pn_ttnv.setBackground(new java.awt.Color(255, 255, 255));
-        pn_ttnv.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(255, 102, 102))); // NOI18N
+        pn_ttnv.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), java.awt.Color.black)); // NOI18N
 
         lb_chucvu.setText("Chức vụ");
 
@@ -244,10 +245,10 @@ public class PanelNhanVienXemLuong extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pn_donv.setBackground(new java.awt.Color(255, 255, 204));
+        pn_donv.setBackground(new Color(255, 255, 255));
         pn_donv.setBorder(javax.swing.BorderFactory.createTitledBorder("Thực hiện"));
 
-        bt_inLuongNam.setBackground(new java.awt.Color(204, 204, 204));
+        bt_inLuongNam.setBackground(new Color(255, 204, 102));
         bt_inLuongNam.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_inLuongNam.setText("In Lương Theo Năm");
         bt_inLuongNam.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +257,7 @@ public class PanelNhanVienXemLuong extends javax.swing.JPanel {
             }
         });
 
-        bt_inLuongThang.setBackground(new java.awt.Color(204, 204, 204));
+        bt_inLuongThang.setBackground(new Color(255, 204, 102));
         bt_inLuongThang.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_inLuongThang.setText("In Lương Theo Tháng");
         bt_inLuongThang.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +268,7 @@ public class PanelNhanVienXemLuong extends javax.swing.JPanel {
 
         jLabel2.setText("In Lương Theo Năm");
 
-        bt_inLuongNam2.setBackground(new java.awt.Color(204, 204, 204));
+        bt_inLuongNam2.setBackground(new Color(128, 128, 192));
         bt_inLuongNam2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_inLuongNam2.setText("Xem Cách Tính Lương");
         bt_inLuongNam2.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +305,7 @@ public class PanelNhanVienXemLuong extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pn_findnv.setBackground(new java.awt.Color(204, 255, 204));
+        pn_findnv.setBackground(new Color(255, 255, 255));
         pn_findnv.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
 
         txt_findnv.addActionListener(new java.awt.event.ActionListener() {

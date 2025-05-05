@@ -9,7 +9,7 @@ public class PanelQLNhanVien extends javax.swing.JPanel {
     public PanelQLNhanVien() {
     	this.setPreferredSize(new java.awt.Dimension(960, 740));
         initComponents();
-        pnpn.setBackground(new Color(148,124,176));
+        pnpn.setBackground(new Color(128,0,64));
         pnctpn.setBackground(new Color(1,50,67));        
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelNhanVien());
@@ -29,7 +29,7 @@ public class PanelQLNhanVien extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         panel_View = new javax.swing.JPanel();
 
-        pn_all.setBackground(new java.awt.Color(204, 204, 255));
+        pn_all.setBackground(new Color(240, 240, 240));
 
         pn_tieude.setBackground(new java.awt.Color(1, 50, 67));
 
@@ -147,7 +147,7 @@ public class PanelQLNhanVien extends javax.swing.JPanel {
 
     private void pnpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnpnMouseClicked
         panel_View.removeAll();
-        pnpn.setBackground(new Color(148,124,176));
+        pnpn.setBackground(new Color(128,0,64));
         pnctpn.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelNhanVien());
@@ -157,7 +157,7 @@ public class PanelQLNhanVien extends javax.swing.JPanel {
 
     private void pnctpnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnctpnMouseClicked
         panel_View.removeAll();
-        pnctpn.setBackground(new Color(148,124,176));
+        pnctpn.setBackground(new Color (128,0,64));
         pnpn.setBackground(new Color(1,50,67));
         panel_View.setLayout(new BorderLayout());
         panel_View.add(new PanelTinhLuongNhanVien());

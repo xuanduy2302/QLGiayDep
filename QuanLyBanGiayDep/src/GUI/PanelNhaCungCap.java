@@ -11,6 +11,10 @@ import javax.swing.table.DefaultTableModel;
 
 import BUS.NhaCungCapBUS;
 import DTO.NhaCungCapDTO;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import java.awt.Color;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class PanelNhaCungCap extends javax.swing.JPanel {
@@ -148,12 +152,12 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
             }
         };
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel8.setBackground(new Color(240, 240, 240));
         jPanel8.setPreferredSize(new java.awt.Dimension(945, 617));
         jPanel8.setRequestFocusEnabled(false);
 
         pn_ttncc.setBackground(new java.awt.Color(255, 255, 255));
-        pn_ttncc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhà cung cấp", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12), new java.awt.Color(255, 102, 102))); // NOI18N
+        pn_ttncc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin nhà cung cấp", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12),  java.awt.Color.BLACK)); // NOI18N
 
         lb_ncc.setText("Mã nhà cung cấp:");
 
@@ -210,10 +214,10 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pn_doncc.setBackground(new java.awt.Color(255, 255, 204));
+        pn_doncc.setBackground(new Color(255, 255, 255));
         pn_doncc.setBorder(javax.swing.BorderFactory.createTitledBorder("Thực hiện"));
 
-        bt_addncc.setBackground(new java.awt.Color(204, 204, 204));
+        bt_addncc.setBackground(new Color(76, 175, 80));
         bt_addncc.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_addncc.setText("Thêm");
         bt_addncc.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +226,7 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
             }
         });
 
-        bt_resetncc.setBackground(new java.awt.Color(204, 204, 204));
+        bt_resetncc.setBackground(new Color(66, 165, 245));
         bt_resetncc.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_resetncc.setText("Reset");
         bt_resetncc.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +235,7 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
             }
         });
 
-        bt_changencc.setBackground(new java.awt.Color(204, 204, 204));
+        bt_changencc.setBackground(new Color(255, 193, 7));
         bt_changencc.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         bt_changencc.setText("Sửa");
         bt_changencc.setMaximumSize(new java.awt.Dimension(65, 23));
@@ -244,34 +248,33 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
         });
 
         javax.swing.GroupLayout pn_donccLayout = new javax.swing.GroupLayout(pn_doncc);
-        pn_doncc.setLayout(pn_donccLayout);
         pn_donccLayout.setHorizontalGroup(
-            pn_donccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_donccLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pn_donccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_changencc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_addncc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bt_resetncc, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        	pn_donccLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(pn_donccLayout.createSequentialGroup()
+        			.addGap(20)
+        			.addGroup(pn_donccLayout.createParallelGroup(Alignment.LEADING, false)
+        				.addComponent(bt_resetncc, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(bt_changencc, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(bt_addncc, GroupLayout.PREFERRED_SIZE, 297, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
         pn_donccLayout.setVerticalGroup(
-            pn_donccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_donccLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bt_addncc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(pn_donccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_changencc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_resetncc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(146, Short.MAX_VALUE))
+        	pn_donccLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(pn_donccLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(bt_addncc, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+        			.addGap(26)
+        			.addComponent(bt_changencc, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+        			.addGap(30)
+        			.addComponent(bt_resetncc, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(49, Short.MAX_VALUE))
         );
+        pn_doncc.setLayout(pn_donccLayout);
 
-        pn_findncc.setBackground(new java.awt.Color(204, 255, 204));
+        pn_findncc.setBackground(new Color(255, 255, 255));
         pn_findncc.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 204));
+        jComboBox1.setBackground(new Color(240, 240, 240));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã nhà cung cấp", "Tên nhà cung cấp" }));
 
         bt_findncc.setBackground(new java.awt.Color(204, 204, 204));
@@ -293,35 +296,37 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
         });
 
         javax.swing.GroupLayout pn_findnccLayout = new javax.swing.GroupLayout(pn_findncc);
-        pn_findncc.setLayout(pn_findnccLayout);
         pn_findnccLayout.setHorizontalGroup(
-            pn_findnccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_findnccLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pn_findnccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn_findnccLayout.createSequentialGroup()
-                        .addComponent(bt_findncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_backncc, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pn_findnccLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_findncc)))
-                .addContainerGap())
+        	pn_findnccLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(pn_findnccLayout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(txt_findncc, 200, 200, 200)
+        			.addContainerGap(16, Short.MAX_VALUE))
+        		.addGroup(pn_findnccLayout.createSequentialGroup()
+        			.addGap(120)
+        			.addComponent(bt_backncc, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(126, Short.MAX_VALUE))
+        		.addGroup(pn_findnccLayout.createSequentialGroup()
+        			.addGap(31)
+        			.addComponent(bt_findncc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addGap(32))
         );
         pn_findnccLayout.setVerticalGroup(
-            pn_findnccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_findnccLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pn_findnccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_findncc, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(pn_findnccLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bt_findncc, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(bt_backncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        	pn_findnccLayout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(pn_findnccLayout.createSequentialGroup()
+        			.addGap(25)
+        			.addGroup(pn_findnccLayout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(txt_findncc, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+        			.addGap(18)
+        			.addComponent(bt_findncc, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+        			.addGap(34)
+        			.addComponent(bt_backncc)
+        			.addContainerGap())
         );
+        pn_findncc.setLayout(pn_findnccLayout);
 
         tb_nsx.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -342,47 +347,50 @@ public class PanelNhaCungCap extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tb_nsx);
 
         javax.swing.GroupLayout panel9Layout = new javax.swing.GroupLayout(panel9);
-        panel9.setLayout(panel9Layout);
         panel9Layout.setHorizontalGroup(
-            panel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
+        	panel9Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(panel9Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         panel9Layout.setVerticalGroup(
-            panel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
-                .addContainerGap())
+        	panel9Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(panel9Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 663, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(97, Short.MAX_VALUE))
         );
+        panel9.setLayout(panel9Layout);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pn_ttncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pn_doncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pn_findncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        	jPanel8Layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(jPanel8Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(jPanel8Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(pn_doncc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(pn_findncc, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+        				.addComponent(pn_ttncc, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(panel9, GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
+        			.addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pn_ttncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pn_findncc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pn_doncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(0, 64, Short.MAX_VALUE)
-                .addComponent(panel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        	jPanel8Layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(jPanel8Layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(pn_ttncc, GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+        			.addGap(18)
+        			.addComponent(pn_findncc, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(pn_doncc, GroupLayout.PREFERRED_SIZE, 262, GroupLayout.PREFERRED_SIZE)
+        			.addGap(54))
+        		.addGroup(jPanel8Layout.createSequentialGroup()
+        			.addGap(0, 1, Short.MAX_VALUE)
+        			.addComponent(panel9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         );
+        jPanel8.setLayout(jPanel8Layout);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
